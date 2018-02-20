@@ -1,8 +1,20 @@
 20/02/2018
+Hal yang dilakukan :
+
 > Mengedit readme di repository kelompok 4
 > Mengintegrasikan netbeans dengan github
-	- mengambil repository dari github
-	- belum berhasil menge-pull code ke repository
+	- Mengambil repository dari github melalui netbeans
+	Kendala :
+		- Sempat gagal menge-pull code ke repository
+	Solusi 	:
+		- Menyalin file yang ingin di-upload ke local disk repository kemudian perubahan akan disingkronisasikan melalui 		aplikasi git dekstop
+	
 > Mengoperasikan github di dekstop
-	- aplikasi lag
-	- meng-upload source code dalam bahasa c / java
+	- Meng-upload source code dalam bahasa c / java
+	Kendala :
+ 		- Aplikasi mengalami lag berat
+	Solusi : 
+		- Menginstall ulang aplikasi
+
+> Membantu memberikan ide untuk pembuatan deskripsi aplikasi
+		
