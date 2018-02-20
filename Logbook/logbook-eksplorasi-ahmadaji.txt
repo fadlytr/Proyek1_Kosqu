@@ -7,7 +7,8 @@ Hal yang dilakukan :
 	Kendala :
 		- Sempat gagal menge-pull code ke repository
 	Solusi 	:
-		- Menyalin file yang ingin di-upload ke local disk repository kemudian perubahan akan disingkronisasikan melalui 		aplikasi git dekstop
+		- Menyalin file yang ingin di-upload ke local disk repository kemudian perubahan akan 
+		disingkronisasikan melalui aplikasi git dekstop
 	
 > Mengoperasikan github di dekstop
 	- Meng-upload source code dalam bahasa c / java
