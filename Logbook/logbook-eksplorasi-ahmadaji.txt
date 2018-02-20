@@ -1,0 +1,8 @@
+20/02/2018
+> Mengedit readme di repository kelompok 4
+> Mengintegrasikan netbeans dengan github
+	- mengambil repository dari github
+	- belum berhasil menge-pull code ke repository
+> Mengoperasikan github di dekstop
+	- aplikasi lag
+	- meng-upload source code dalam bahasa c / java
