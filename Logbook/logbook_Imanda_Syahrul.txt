@@ -1,0 +1,10 @@
+20 Februari 2018
+ Membuat logo aplikasi dan icon-icon yang akan dibutuhkan dalam proyek ini, karena saya seorang 
+designer, jadi saya memulai dengan apa yang menjadi hobi saya terlebih dahulu dan karena kebetulan
+dapat ide untuk mendesain tampilanya... yang sudah selesai dibuat adalah logo aplikasi dan beberapa
+icon, karena icon-iconya belum sepenuhnya selesai, yang saya upload di git baru logo aplikasinya saja
+
+
+21 Februari 2018
+ Membuat rancangan model data berdasarkan referensi model data dari kasus e-commerce. Model data ini 
+dimodifikasi sedemikian rupa hingga memenuhi kebutuhan pada kasus rekomender kos
