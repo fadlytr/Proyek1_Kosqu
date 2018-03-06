@@ -23,3 +23,5 @@ Hal yang dilakukan :
 Hal yang dilakukan : 
 
 > Presentasi konsep Kosqu
+> Membuat kuisioner untuk mendapatkan data kosan di Bandung
+> Mempelajari webscrapper untuk mengambil data pada file
