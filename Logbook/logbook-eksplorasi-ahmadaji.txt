@@ -1,27 +1,2 @@
-20/02/2018
-Hal yang dilakukan :
-
-> Mengedit readme di repository kelompok 4
-> Mengintegrasikan netbeans dengan github
-	- Mengambil repository dari github melalui netbeans
-	Kendala :
-		- Sempat gagal menge-pull code ke repository
-	Solusi 	:
-		- Menyalin file yang ingin di-upload ke local disk repository kemudian perubahan akan 
-		disingkronisasikan melalui aplikasi git dekstop
-	
-> Mengoperasikan github di dekstop
-	- Meng-upload source code dalam bahasa c / java
-	Kendala :
- 		- Aplikasi mengalami lag berat
-	Solusi : 
-		- Menginstall ulang aplikasi
-
-> Membantu memberikan ide untuk pembuatan deskripsi aplikasi
-		
-27/02/2018
-Hal yang dilakukan : 
-
-> Presentasi konsep Kosqu
-
 > Membuat kuisioner untuk mendapatkan data kosan di Bandung
+> Mempelajari webscrapper untuk mengambil data pada file
