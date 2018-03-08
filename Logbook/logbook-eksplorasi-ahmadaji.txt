@@ -24,4 +24,16 @@ Hal yang dilakukan :
 
 > Presentasi konsep Kosqu
 > Membuat kuisioner untuk mendapatkan data kosan di Bandung
-> Mempelajari webscrapper untuk mengambil data pada file
+> Mempelajari webscrapper untuk mengambil data pada file	
+	-Menggunakan webscrapper pada chrome untuk mengambil data di website mamikos
+	Kendala : 
+		- Tidak dapat melakukan scrapping dengan efektif di website mamikos karena design website-nya yang rumit
+	Solusi	:
+		- Melakukan scrapping satu per satu setiap bagian
+
+
+06/03/2018
+Hal yang dilakukan :
+
+> Mempelajari git bash setelah sebelumnya dapat menggunakan git UI
+> Membuat data Kos pada kecamatan Andir
