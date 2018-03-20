@@ -18,6 +18,7 @@ Hal yang dilakukan :
 		- Menginstall ulang aplikasi
 
 > Membantu memberikan ide untuk pembuatan deskripsi aplikasi
+
 		
 27/02/2018
 Hal yang dilakukan : 
@@ -37,3 +38,20 @@ Hal yang dilakukan :
 
 > Mempelajari git bash setelah sebelumnya dapat menggunakan git UI
 > Membuat data Kos pada kecamatan Andir
+
+
+13/03/2018
+Hal yang dilakukan :
+
+> Mempelajari git bash lebih dalam	
+> Scrapping data kosan di kecamatan Andir
+> Melakukan eksplorasi cara mengkonversi pdf ke excel
+
+
+20/03/2018
+Hal yang dilakukan :
+
+> Mempelajari git bash lebih dalam
+> Membuat laporan eksplorasi konversi pdf ke excel
+> Membuat folder eksplorasi 
+> Scrapping data kosan di kecamatan Andir
