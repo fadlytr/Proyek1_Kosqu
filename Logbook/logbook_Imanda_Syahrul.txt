@@ -8,3 +8,16 @@ icon, karena icon-iconya belum sepenuhnya selesai, yang saya upload di git baru 
 21 Februari 2018
  Membuat rancangan model data berdasarkan referensi model data dari kasus e-commerce. Model data ini 
 dimodifikasi sedemikian rupa hingga memenuhi kebutuhan pada kasus rekomender kos
+
+
+27 Maret 2018(gabungan dengan minggu" kemarin juga)
+ Menghubungi Mamikos lewat setiap media sosial yang dicantumkan untuk meminta data(masih belum direspon).
+Menyebarkan kuisioner kepada teman teman di daerah bandung(Itenas,Widiyatama,SMAN10 Bandung dan sekitarnya) 
+dan masih sedikit sekali yang merespon. eksplorasi melalui wegodev tentang web e-commerce, menambahkan data.
+
+
+
+
+
+Rencana Selanjutnya
+ Mencoba membuat web untuk visualisasi, menyelesaikan membuat icon", melaksanakan instruksi selanjutnya
