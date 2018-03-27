@@ -56,9 +56,14 @@ Hal yang dilakukan :
 > Membuat folder eksplorasi 
 > Scrapping data kosan di kecamatan Andir
 
+
 27//03/2018
 Hal yang dilakukan :
 
 > Input data kosan di kecamatan Antapani
 > Mempelajari Pengolahan file excel dengan java maven
->
+
+	Kendala : 
+		- Tidak berhasil menjalankan sample projek JavaExcelMaven akibat tidak tersedianya package jxl
+	Solusi :
+		- Belum ditemukan
