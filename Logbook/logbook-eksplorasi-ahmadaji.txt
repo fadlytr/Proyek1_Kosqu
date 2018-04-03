@@ -67,3 +67,11 @@ Hal yang dilakukan :
 		- Tidak berhasil menjalankan sample projek JavaExcelMaven akibat tidak tersedianya package jxl
 	Solusi :
 		- Belum ditemukan
+
+
+03/04/2018
+Hal yang dilakukan :
+
+> Menyelesaikan permasalahan hari sebelumnya dengan mendownload libary java maven
+> Memperlajari JFrame untuk mengolah file excel dengan java dibantu dengan libary jxl
+> Membuat program pengolahan data nilai mahasiswa untuk menyelesaikan UTS
