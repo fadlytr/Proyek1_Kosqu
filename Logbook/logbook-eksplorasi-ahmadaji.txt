@@ -1,3 +1,5 @@
+LOGBOOK - AHMAD AJI NAUFAL ALI - 171524002
+
 20/02/2018
 Hal yang dilakukan :
 
@@ -75,3 +77,16 @@ Hal yang dilakukan :
 > Menyelesaikan permasalahan hari sebelumnya dengan mendownload libary java maven
 > Memperlajari JFrame untuk mengolah file excel dengan java dibantu dengan libary jxl
 > Membuat program pengolahan data nilai mahasiswa untuk menyelesaikan UTS
+
+
+17/04/2018
+Hal yang dilakukan :
+
+> Mempelajari Cara membuat GUI dengan Java
+> Membuat Starting GUI pada Aplikasi
+	
+	Kendala : 
+		- Belum dapat membuat tampilan yang indah
+	Solusi :
+		- Belum ditemukan
+> 
