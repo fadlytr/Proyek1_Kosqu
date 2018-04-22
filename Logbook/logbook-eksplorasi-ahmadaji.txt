@@ -89,4 +89,16 @@ Hal yang dilakukan :
 		- Belum dapat membuat tampilan yang indah
 	Solusi :
 		- Belum ditemukan
-> 
+
+Kamis 19 April 2018 - 21.17
+Dilakukan : 
+ > Bekerja pada design GUI HomePage sesuai dengan mockup yang telah dibuat
+
+Minggu 22 April 2018 - 14.58
+Diakukan : 
+ > Membuat Hompage sampai tahap perancangan awal
+Kendala : 
+ > Belum dapat menampilkan dengan baik
+Next	: 
+ > Memperbaiki homepage yang telah dibuat
+

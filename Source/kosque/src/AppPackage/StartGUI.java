@@ -5,6 +5,9 @@
  */
 package AppPackage;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Ahmad_Aji_Naufal_Ali
@@ -39,16 +42,15 @@ public class StartGUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(139, 139, 139)
+                .addGap(128, 128, 128)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(153, Short.MAX_VALUE))
+                .addContainerGap(164, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(236, Short.MAX_VALUE))
+                .addGap(0, 247, Short.MAX_VALUE))
         );
 
         pack();
@@ -92,17 +94,15 @@ public class StartGUI extends javax.swing.JFrame {
     private static class RunnableImpl implements Runnable {
 
         public RunnableImpl() {
-            try{
-                Thread.sleep(4500);
-            }
-            catch (InterruptedException e){
-                System.out.println("Waktu gagal");
-            }
-            new StartGUI().setVisible(true);
-
+            
         }
 
         public void run() {
+            try {
+                Thread.sleep(4500);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(StartGUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
             new StartGUI().setVisible(true);
         }
     }
