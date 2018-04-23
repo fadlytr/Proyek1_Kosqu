@@ -16,8 +16,12 @@ Menyebarkan kuisioner kepada teman teman di daerah bandung(Itenas,Widiyatama,SMA
 dan masih sedikit sekali yang merespon. eksplorasi melalui wegodev tentang web e-commerce, menambahkan data.
 
 
-
-
+20 April 2018- 24 April 2018
+ Eksplorasi Visual Basic for Application Untuk membuat MockUp, MockUp dibuat Tanggal 21 April 2018 lalu 
+selesai tanggal 24 April 2018. Masih banyak syntax dari VBA yang masih belum saya ketahu jadi MockUp ini dibuat 
+dengan memakai syntax" dasar dan belum cleancode. Saya berpikir bisa saja kami membuat aplikasi dengan menggunakan 
+powerpoint dengan adanya VBA di developer mode apalagi MS Powerpoint dapat langsung membaca excel, tetapi masa selama
+6 bulan proyek outputnya hanya berupa ppt,ujar rekan saya...
 
 Rencana Selanjutnya
  Mencoba membuat web untuk visualisasi, menyelesaikan membuat icon", melaksanakan instruksi selanjutnya
