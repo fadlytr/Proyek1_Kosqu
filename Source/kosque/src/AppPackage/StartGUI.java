@@ -172,8 +172,6 @@ public class StartGUI extends javax.swing.JFrame {
         String pass = jPasswordField1.getText();
         
         System.out.println(username);
-        System.out.println(username);
-        System.out.println(pass);
         System.out.println(pass);
         //cek variabel username dan pass apakah ada di excel login
         //jika username password ada dan benar maka lanjut ke halaman berikutnya
