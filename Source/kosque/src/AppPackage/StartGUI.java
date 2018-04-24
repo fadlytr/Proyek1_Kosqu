@@ -163,7 +163,6 @@ public class StartGUI extends javax.swing.JFrame {
 
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
         // TODO add your handling code here:
-        System.out.println(jTextField1.getText());
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -217,7 +216,7 @@ public class StartGUI extends javax.swing.JFrame {
 
         public void run() {
             try {
-                Thread.sleep(1000);
+                Thread.sleep(2000);
             } catch (InterruptedException ex) {
                 Logger.getLogger(StartGUI.class.getName()).log(Level.SEVERE, null, ex);
             }
