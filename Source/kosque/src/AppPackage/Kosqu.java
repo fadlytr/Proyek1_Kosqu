@@ -14,7 +14,5 @@ import java.util.Scanner;
  */
 public class Kosqu {
     public static void main(String[] args) {
-        
-
     }
 }
