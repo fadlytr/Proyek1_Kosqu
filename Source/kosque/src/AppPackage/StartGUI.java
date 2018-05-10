@@ -64,10 +64,7 @@ public class StartGUI extends javax.swing.JFrame {
         setBackground(new java.awt.Color(0, 153, 153));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        BG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         sidePanel.setBackground(new java.awt.Color(255, 255, 255));
-        sidePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         PanelSignIn.setBackground(new java.awt.Color(140, 158, 243));
 
@@ -156,13 +153,10 @@ public class StartGUI extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        sidePanel.add(PanelSignIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 330, 180));
-
         judulApp.setBackground(new java.awt.Color(0, 51, 102));
         judulApp.setFont(new java.awt.Font("Arial Black", 1, 48)); // NOI18N
         judulApp.setForeground(new java.awt.Color(0, 51, 102));
         judulApp.setText("KosQu");
-        sidePanel.add(judulApp, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         PanelSignUP.setBackground(new java.awt.Color(165, 178, 243));
 
@@ -194,8 +188,6 @@ public class StartGUI extends javax.swing.JFrame {
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
-        sidePanel.add(PanelSignUP, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 330, 60));
-
         PanelAbout.setBackground(new java.awt.Color(165, 178, 243));
 
         iconAbout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/data/icons/icons8_Info_32px.png"))); // NOI18N
@@ -226,47 +218,124 @@ public class StartGUI extends javax.swing.JFrame {
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
-        sidePanel.add(PanelAbout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 330, 60));
-
-        BG.add(sidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 683));
+        javax.swing.GroupLayout sidePanelLayout = new javax.swing.GroupLayout(sidePanel);
+        sidePanel.setLayout(sidePanelLayout);
+        sidePanelLayout.setHorizontalGroup(
+            sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sidePanelLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(judulApp))
+            .addComponent(PanelSignIn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(PanelSignUP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(PanelAbout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        sidePanelLayout.setVerticalGroup(
+            sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sidePanelLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(judulApp)
+                .addGap(62, 62, 62)
+                .addComponent(PanelSignIn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(PanelSignUP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(PanelAbout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         homePanel.setBackground(new java.awt.Color(101, 153, 255));
-        homePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/data/background.png"))); // NOI18N
-        homePanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jScrollPane2.setBackground(new java.awt.Color(204, 51, 0));
 
         homepage.setBackground(new java.awt.Color(0, 51, 102));
-        homepage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/data/Logo.png"))); // NOI18N
-        homepage.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, -1, -1));
 
         deskripsi1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         deskripsi1.setForeground(new java.awt.Color(255, 255, 255));
         deskripsi1.setText("KosQu adalah aplikasi yang dapat memberikan informasi dan rekomendasi");
-        homepage.add(deskripsi1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 460, -1, -1));
 
         deskripsi2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         deskripsi2.setForeground(new java.awt.Color(255, 255, 255));
         deskripsi2.setText("tempat kos yang ada di kota bandung");
-        homepage.add(deskripsi2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 480, -1, -1));
 
         jLabel3.setText("jLabel3");
-        homepage.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(354, 904, -1, -1));
 
         judulApp1.setFont(new java.awt.Font("Arial Black", 1, 60)); // NOI18N
         judulApp1.setForeground(new java.awt.Color(255, 255, 255));
         judulApp1.setText("KosQu");
-        homepage.add(judulApp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, -1, -1));
+
+        javax.swing.GroupLayout homepageLayout = new javax.swing.GroupLayout(homepage);
+        homepage.setLayout(homepageLayout);
+        homepageLayout.setHorizontalGroup(
+            homepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(homepageLayout.createSequentialGroup()
+                .addGap(260, 260, 260)
+                .addGroup(homepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(logo)
+                    .addGroup(homepageLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(judulApp1))))
+            .addGroup(homepageLayout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addGroup(homepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(deskripsi1)
+                    .addGroup(homepageLayout.createSequentialGroup()
+                        .addGap(140, 140, 140)
+                        .addComponent(deskripsi2))))
+            .addGroup(homepageLayout.createSequentialGroup()
+                .addGap(354, 354, 354)
+                .addComponent(jLabel3))
+        );
+        homepageLayout.setVerticalGroup(
+            homepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(homepageLayout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addGroup(homepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(logo)
+                    .addGroup(homepageLayout.createSequentialGroup()
+                        .addGap(260, 260, 260)
+                        .addComponent(judulApp1)))
+                .addGap(15, 15, 15)
+                .addGroup(homepageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(deskripsi1)
+                    .addGroup(homepageLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(deskripsi2)))
+                .addGap(402, 402, 402)
+                .addComponent(jLabel3))
+        );
 
         jScrollPane2.setViewportView(homepage);
 
-        homePanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 690));
+        javax.swing.GroupLayout homePanelLayout = new javax.swing.GroupLayout(homePanel);
+        homePanel.setLayout(homePanelLayout);
+        homePanelLayout.setHorizontalGroup(
+            homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 790, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        homePanelLayout.setVerticalGroup(
+            homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
-        BG.add(homePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(329, -5, 790, 690));
+        javax.swing.GroupLayout BGLayout = new javax.swing.GroupLayout(BG);
+        BG.setLayout(BGLayout);
+        BGLayout.setHorizontalGroup(
+            BGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BGLayout.createSequentialGroup()
+                .addComponent(sidePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(homePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        BGLayout.setVerticalGroup(
+            BGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(homePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(sidePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
