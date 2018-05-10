@@ -5,8 +5,10 @@
  */
 package AppPackage;
 
+import java.awt.Color;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JPanel;
 
 /**
  *
@@ -70,6 +72,11 @@ public class StartGUI extends javax.swing.JFrame {
         sidePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         PanelSignIn.setBackground(new java.awt.Color(140, 158, 243));
+        PanelSignIn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                PanelSignInMousePressed(evt);
+            }
+        });
 
         Loggin.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         Loggin.setForeground(new java.awt.Color(255, 255, 255));
@@ -165,6 +172,11 @@ public class StartGUI extends javax.swing.JFrame {
         sidePanel.add(judulApp, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         PanelSignUP.setBackground(new java.awt.Color(165, 178, 243));
+        PanelSignUP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                PanelSignUPMousePressed(evt);
+            }
+        });
 
         iconLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/data/icons/icons8_Add_User_Male_32px.png"))); // NOI18N
         iconLabel1.setToolTipText("");
@@ -178,25 +190,29 @@ public class StartGUI extends javax.swing.JFrame {
         PanelSignUPLayout.setHorizontalGroup(
             PanelSignUPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelSignUPLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(10, 10, 10)
                 .addComponent(iconLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Loggin1)
-                .addContainerGap(195, Short.MAX_VALUE))
+                .addGap(6, 6, 6)
+                .addComponent(Loggin1))
         );
         PanelSignUPLayout.setVerticalGroup(
             PanelSignUPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelSignUPLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(PanelSignUPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Loggin1)
-                    .addComponent(iconLabel1))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addGap(11, 11, 11)
+                .addComponent(iconLabel1))
+            .addGroup(PanelSignUPLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(Loggin1))
         );
 
         sidePanel.add(PanelSignUP, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 330, 60));
 
         PanelAbout.setBackground(new java.awt.Color(165, 178, 243));
+        PanelAbout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                PanelAboutMousePressed(evt);
+            }
+        });
 
         iconAbout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/data/icons/icons8_Info_32px.png"))); // NOI18N
         iconAbout.setToolTipText("");
@@ -210,20 +226,19 @@ public class StartGUI extends javax.swing.JFrame {
         PanelAboutLayout.setHorizontalGroup(
             PanelAboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelAboutLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(10, 10, 10)
                 .addComponent(iconAbout)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(about)
-                .addContainerGap(219, Short.MAX_VALUE))
+                .addGap(6, 6, 6)
+                .addComponent(about))
         );
         PanelAboutLayout.setVerticalGroup(
             PanelAboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelAboutLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(PanelAboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(about)
-                    .addComponent(iconAbout))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addGap(11, 11, 11)
+                .addComponent(iconAbout))
+            .addGroup(PanelAboutLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(about))
         );
 
         sidePanel.add(PanelAbout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 330, 60));
@@ -294,6 +309,44 @@ public class StartGUI extends javax.swing.JFrame {
     private void buttonSigninActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSigninActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_buttonSigninActionPerformed
+
+    private void PanelSignUPMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelSignUPMousePressed
+        // TODO add your handling code here:
+        setColor(PanelSignUP);
+        resetColor(PanelSignIn);
+        resetColor(PanelAbout);
+    }//GEN-LAST:event_PanelSignUPMousePressed
+
+    private void PanelAboutMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelAboutMousePressed
+        // TODO add your handling code here:
+        setColor(PanelAbout);
+        resetColor(PanelSignIn);
+        resetColor(PanelSignUP);
+    }//GEN-LAST:event_PanelAboutMousePressed
+
+    private void PanelSignInMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelSignInMousePressed
+        // TODO add your handling code here:
+        setColor(PanelSignIn);
+        resetColor(PanelSignUP);
+        resetColor(PanelAbout);
+    }//GEN-LAST:event_PanelSignInMousePressed
+    
+    
+    
+    
+    
+    
+    void setColor(JPanel panel){
+        panel.setBackground(new Color(140,158,243));
+    }
+    void resetColor(JPanel panel){
+        panel.setBackground(new Color(165,178,243));
+    }
+    
+    //done by Imanda
+    
+    
+    
     /**
      * @param args the command line arguments
      */
