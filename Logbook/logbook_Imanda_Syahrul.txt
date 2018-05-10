@@ -25,3 +25,10 @@ powerpoint dengan adanya VBA di developer mode apalagi MS Powerpoint dapat langs
 
 Rencana Selanjutnya
  Mencoba membuat web untuk visualisasi, menyelesaikan membuat icon", melaksanakan instruksi selanjutnya
+ 
+9-10 Mei 2018
+
+Merombak UI secara keseluruhan langsung menggunakan GUI Netbeans(pada branch "baru"), menambahkan excel userdata untuk data akun"
+milik user, saya merasa kesulitan menggunakan git console sehingga hal tersebut menghasilkan kendala:
+- absolute layout tidak dapat di import
+- branch "Imanda" menjadi branch berisi bug jd hasil kerja saya ditaruh di brach "baru"
