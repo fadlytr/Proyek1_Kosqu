@@ -312,13 +312,16 @@ public class StartGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonSigninActionPerformed
 
     private void PanelSignUPMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelSignUPMousePressed
+        //@author Imanda_Syahrul_Ramadhan
         // TODO add your handling code here:
         setColor(PanelSignUP);
         resetColor(PanelSignIn);
         resetColor(PanelAbout);
+        new FormSignUp().setVisible(true);
     }//GEN-LAST:event_PanelSignUPMousePressed
 
     private void PanelAboutMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelAboutMousePressed
+        //@author Imanda_Syahrul_Ramadhan
         // TODO add your handling code here:
         setColor(PanelAbout);
         resetColor(PanelSignIn);
@@ -326,6 +329,7 @@ public class StartGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_PanelAboutMousePressed
 
     private void PanelSignInMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelSignInMousePressed
+        //@author Imanda_Syahrul_Ramadhan
         // TODO add your handling code here:
         setColor(PanelSignIn);
         resetColor(PanelSignUP);
@@ -335,7 +339,7 @@ public class StartGUI extends javax.swing.JFrame {
     
     
     
-    
+    //@author Imanda_Syahrul_Ramadhan
     
     void setColor(JPanel panel){
         panel.setBackground(new Color(140,158,243));
@@ -344,7 +348,7 @@ public class StartGUI extends javax.swing.JFrame {
         panel.setBackground(new Color(165,178,243));
     }
     
-    //done by Imanda
+   
     
     
     
