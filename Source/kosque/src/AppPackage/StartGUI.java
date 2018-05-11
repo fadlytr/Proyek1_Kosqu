@@ -107,6 +107,7 @@ public class StartGUI extends javax.swing.JFrame {
         labelUsername.setForeground(new java.awt.Color(255, 255, 255));
         labelUsername.setText("Username");
 
+        buttonSignin.setBackground(new java.awt.Color(111, 134, 243));
         buttonSignin.setText("Sign In");
         buttonSignin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
