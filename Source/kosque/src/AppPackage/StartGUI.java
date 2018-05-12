@@ -47,6 +47,9 @@ public class StartGUI extends javax.swing.JFrame {
         PanelSignUP = new javax.swing.JPanel();
         iconLabel1 = new javax.swing.JLabel();
         Loggin1 = new javax.swing.JLabel();
+        PanelStatistic = new javax.swing.JPanel();
+        iconAbout1 = new javax.swing.JLabel();
+        about1 = new javax.swing.JLabel();
         PanelAbout = new javax.swing.JPanel();
         iconAbout = new javax.swing.JLabel();
         about = new javax.swing.JLabel();
@@ -208,6 +211,42 @@ public class StartGUI extends javax.swing.JFrame {
 
         sidePanel.add(PanelSignUP, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 330, 60));
 
+        PanelStatistic.setBackground(new java.awt.Color(165, 178, 243));
+        PanelStatistic.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                PanelStatisticMousePressed(evt);
+            }
+        });
+
+        iconAbout1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/data/icons/icons8_Statistics_32px_2.png"))); // NOI18N
+        iconAbout1.setToolTipText("");
+
+        about1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        about1.setForeground(new java.awt.Color(255, 255, 255));
+        about1.setText("Statistic");
+
+        javax.swing.GroupLayout PanelStatisticLayout = new javax.swing.GroupLayout(PanelStatistic);
+        PanelStatistic.setLayout(PanelStatisticLayout);
+        PanelStatisticLayout.setHorizontalGroup(
+            PanelStatisticLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelStatisticLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(iconAbout1)
+                .addGap(6, 6, 6)
+                .addComponent(about1))
+        );
+        PanelStatisticLayout.setVerticalGroup(
+            PanelStatisticLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelStatisticLayout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addComponent(iconAbout1))
+            .addGroup(PanelStatisticLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(about1))
+        );
+
+        sidePanel.add(PanelStatistic, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 330, 60));
+
         PanelAbout.setBackground(new java.awt.Color(165, 178, 243));
         PanelAbout.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -242,7 +281,7 @@ public class StartGUI extends javax.swing.JFrame {
                 .addComponent(about))
         );
 
-        sidePanel.add(PanelAbout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 330, 60));
+        sidePanel.add(PanelAbout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 330, 60));
 
         BG.add(sidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 683));
 
@@ -317,6 +356,7 @@ public class StartGUI extends javax.swing.JFrame {
         setColor(PanelSignUP);
         resetColor(PanelSignIn);
         resetColor(PanelAbout);
+        resetColor(PanelStatistic);
         new FormSignUp().setVisible(true);
     }//GEN-LAST:event_PanelSignUPMousePressed
 
@@ -326,6 +366,7 @@ public class StartGUI extends javax.swing.JFrame {
         setColor(PanelAbout);
         resetColor(PanelSignIn);
         resetColor(PanelSignUP);
+        resetColor(PanelStatistic);
     }//GEN-LAST:event_PanelAboutMousePressed
 
     private void PanelSignInMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelSignInMousePressed
@@ -334,7 +375,16 @@ public class StartGUI extends javax.swing.JFrame {
         setColor(PanelSignIn);
         resetColor(PanelSignUP);
         resetColor(PanelAbout);
+        resetColor(PanelStatistic);
     }//GEN-LAST:event_PanelSignInMousePressed
+
+    private void PanelStatisticMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelStatisticMousePressed
+        // TODO add your handling code here:
+        setColor(PanelStatistic);
+        resetColor(PanelSignUP);
+        resetColor(PanelAbout);
+        resetColor(PanelSignIn);
+    }//GEN-LAST:event_PanelStatisticMousePressed
     
     
     
@@ -405,13 +455,16 @@ public class StartGUI extends javax.swing.JFrame {
     private javax.swing.JPanel PanelAbout;
     private javax.swing.JPanel PanelSignIn;
     private javax.swing.JPanel PanelSignUP;
+    private javax.swing.JPanel PanelStatistic;
     private javax.swing.JLabel about;
+    private javax.swing.JLabel about1;
     private javax.swing.JButton buttonSignin;
     private javax.swing.JLabel deskripsi1;
     private javax.swing.JLabel deskripsi2;
     private javax.swing.JPanel homePanel;
     private javax.swing.JPanel homepage;
     private javax.swing.JLabel iconAbout;
+    private javax.swing.JLabel iconAbout1;
     private javax.swing.JLabel iconLabel;
     private javax.swing.JLabel iconLabel1;
     private javax.swing.JLabel jLabel1;
