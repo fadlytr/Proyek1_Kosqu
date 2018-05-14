@@ -5,6 +5,7 @@
  */
 package AppPackage;
 
+import javax.swing.JFrame;
 /**
  *
  * @author Imanda Syahrul R
@@ -42,6 +43,7 @@ public class FormSignUp extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
+        exit = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -112,6 +114,15 @@ public class FormSignUp extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 410, 100, 40));
 
+        exit.setBackground(new java.awt.Color(255, 255, 255));
+        exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/data/icons/icons8_Delete_32px_4.png"))); // NOI18N
+        exit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                exitMousePressed(evt);
+            }
+        });
+        jPanel1.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, -1, -1));
+
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/data/formsignup.jpg"))); // NOI18N
         jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -135,6 +146,17 @@ public class FormSignUp extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
+    private void exitMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMousePressed
+        // TODO add your handling code here:
+        //@author Imanda_Syahrul_Ramadhan
+        exitFrame(FormSignUp.this);
+        
+    }//GEN-LAST:event_exitMousePressed
+    
+    void exitFrame(JFrame frame){
+        frame.dispose();
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -172,6 +194,7 @@ public class FormSignUp extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
+    private javax.swing.JLabel exit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
