@@ -77,14 +77,14 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Container class="javax.swing.JPanel" name="PanelSignUP">
+            <Container class="javax.swing.JPanel" name="PanelFilter">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="f3" green="b2" red="a5" type="rgb"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="PanelSignUPMousePressed"/>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="PanelFilterMousePressed"/>
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -120,7 +120,7 @@
                 <Component class="javax.swing.JLabel" name="iconLabel1">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/data/icons/icons8_Add_User_Male_32px.png"/>
+                      <Image iconType="3" name="/data/icons/icons8_Filter_32px.png"/>
                     </Property>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
@@ -133,7 +133,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Sign Up"/>
+                    <Property name="text" type="java.lang.String" value="Filter"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -260,14 +260,14 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="PanelAbout">
+            <Container class="javax.swing.JPanel" name="PanelSetting">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="f3" green="b2" red="a5" type="rgb"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="PanelAboutMousePressed"/>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="PanelSettingMousePressed"/>
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -303,7 +303,7 @@
                 <Component class="javax.swing.JLabel" name="iconAbout">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/data/icons/icons8_Info_32px.png"/>
+                      <Image iconType="3" name="/data/icons/icons8_Settings_32px.png"/>
                     </Property>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
@@ -316,7 +316,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="About"/>
+                    <Property name="text" type="java.lang.String" value="Setting"/>
                   </Properties>
                 </Component>
               </SubComponents>
