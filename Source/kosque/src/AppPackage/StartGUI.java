@@ -35,6 +35,8 @@ public class StartGUI extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         BG = new javax.swing.JPanel();
         sidePanel = new javax.swing.JPanel();
+        judulApp = new javax.swing.JLabel();
+        menuPanel = new javax.swing.JPanel();
         PanelSignIn = new javax.swing.JPanel();
         Loggin = new javax.swing.JLabel();
         iconLabel = new javax.swing.JLabel();
@@ -43,7 +45,6 @@ public class StartGUI extends javax.swing.JFrame {
         labelPassword = new javax.swing.JLabel();
         labelUsername = new javax.swing.JLabel();
         buttonSignin = new javax.swing.JButton();
-        judulApp = new javax.swing.JLabel();
         PanelSignUP = new javax.swing.JPanel();
         iconLabel1 = new javax.swing.JLabel();
         Loggin1 = new javax.swing.JLabel();
@@ -74,19 +75,31 @@ public class StartGUI extends javax.swing.JFrame {
         sidePanel.setBackground(new java.awt.Color(255, 255, 255));
         sidePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        PanelSignIn.setBackground(new java.awt.Color(140, 158, 243));
+        judulApp.setBackground(new java.awt.Color(0, 51, 102));
+        judulApp.setFont(new java.awt.Font("Arial Black", 1, 48)); // NOI18N
+        judulApp.setForeground(new java.awt.Color(0, 51, 102));
+        judulApp.setText("KosQu");
+        sidePanel.add(judulApp, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        menuPanel.setBackground(new java.awt.Color(255, 255, 255));
+        menuPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        PanelSignIn.setBackground(new java.awt.Color(165, 178, 243));
         PanelSignIn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 PanelSignInMousePressed(evt);
             }
         });
+        PanelSignIn.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Loggin.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         Loggin.setForeground(new java.awt.Color(255, 255, 255));
         Loggin.setText("Sign In");
+        PanelSignIn.add(Loggin, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 11, -1, -1));
 
         iconLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/data/icons/icons8_User_32px.png"))); // NOI18N
         iconLabel.setToolTipText("");
+        PanelSignIn.add(iconLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
 
         jUsername.setText("username");
         jUsername.addActionListener(new java.awt.event.ActionListener() {
@@ -94,6 +107,7 @@ public class StartGUI extends javax.swing.JFrame {
                 jUsernameActionPerformed(evt);
             }
         });
+        PanelSignIn.add(jUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 62, 111, 30));
 
         jPassword.setText("password");
         jPassword.addActionListener(new java.awt.event.ActionListener() {
@@ -101,14 +115,17 @@ public class StartGUI extends javax.swing.JFrame {
                 jPasswordActionPerformed(evt);
             }
         });
+        PanelSignIn.add(jPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 104, 111, 30));
 
         labelPassword.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         labelPassword.setForeground(new java.awt.Color(255, 255, 255));
         labelPassword.setText("Password");
+        PanelSignIn.add(labelPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 103, -1, -1));
 
         labelUsername.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         labelUsername.setForeground(new java.awt.Color(255, 255, 255));
         labelUsername.setText("Username");
+        PanelSignIn.add(labelUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 61, -1, -1));
 
         buttonSignin.setBackground(new java.awt.Color(111, 134, 243));
         buttonSignin.setText("Sign In");
@@ -117,63 +134,9 @@ public class StartGUI extends javax.swing.JFrame {
                 buttonSigninActionPerformed(evt);
             }
         });
+        PanelSignIn.add(buttonSignin, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, -1, 29));
 
-        javax.swing.GroupLayout PanelSignInLayout = new javax.swing.GroupLayout(PanelSignIn);
-        PanelSignIn.setLayout(PanelSignInLayout);
-        PanelSignInLayout.setHorizontalGroup(
-            PanelSignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelSignInLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(PanelSignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelSignInLayout.createSequentialGroup()
-                        .addComponent(iconLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Loggin)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelSignInLayout.createSequentialGroup()
-                        .addGap(0, 12, Short.MAX_VALUE)
-                        .addGroup(PanelSignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(buttonSignin)
-                            .addGroup(PanelSignInLayout.createSequentialGroup()
-                                .addGroup(PanelSignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelSignInLayout.createSequentialGroup()
-                                        .addComponent(labelUsername)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                                    .addGroup(PanelSignInLayout.createSequentialGroup()
-                                        .addComponent(labelPassword)
-                                        .addGap(18, 18, 18)))
-                                .addGroup(PanelSignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
-                                    .addComponent(jUsername))))
-                        .addGap(95, 95, 95))))
-        );
-        PanelSignInLayout.setVerticalGroup(
-            PanelSignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelSignInLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(PanelSignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(iconLabel)
-                    .addComponent(Loggin))
-                .addGap(18, 18, 18)
-                .addGroup(PanelSignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelUsername))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(PanelSignInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelPassword))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(buttonSignin, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        sidePanel.add(PanelSignIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 330, 180));
-
-        judulApp.setBackground(new java.awt.Color(0, 51, 102));
-        judulApp.setFont(new java.awt.Font("Arial Black", 1, 48)); // NOI18N
-        judulApp.setForeground(new java.awt.Color(0, 51, 102));
-        judulApp.setText("KosQu");
-        sidePanel.add(judulApp, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        menuPanel.add(PanelSignIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 60));
 
         PanelSignUP.setBackground(new java.awt.Color(165, 178, 243));
         PanelSignUP.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -181,35 +144,18 @@ public class StartGUI extends javax.swing.JFrame {
                 PanelSignUPMousePressed(evt);
             }
         });
+        PanelSignUP.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         iconLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/data/icons/icons8_Add_User_Male_32px.png"))); // NOI18N
         iconLabel1.setToolTipText("");
+        PanelSignUP.add(iconLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
 
         Loggin1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         Loggin1.setForeground(new java.awt.Color(255, 255, 255));
         Loggin1.setText("Sign Up");
+        PanelSignUP.add(Loggin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 14, -1, -1));
 
-        javax.swing.GroupLayout PanelSignUPLayout = new javax.swing.GroupLayout(PanelSignUP);
-        PanelSignUP.setLayout(PanelSignUPLayout);
-        PanelSignUPLayout.setHorizontalGroup(
-            PanelSignUPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelSignUPLayout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(iconLabel1)
-                .addGap(6, 6, 6)
-                .addComponent(Loggin1))
-        );
-        PanelSignUPLayout.setVerticalGroup(
-            PanelSignUPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelSignUPLayout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addComponent(iconLabel1))
-            .addGroup(PanelSignUPLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(Loggin1))
-        );
-
-        sidePanel.add(PanelSignUP, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 330, 60));
+        menuPanel.add(PanelSignUP, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 330, 60));
 
         PanelStatistic.setBackground(new java.awt.Color(165, 178, 243));
         PanelStatistic.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -217,35 +163,18 @@ public class StartGUI extends javax.swing.JFrame {
                 PanelStatisticMousePressed(evt);
             }
         });
+        PanelStatistic.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         iconAbout1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/data/icons/icons8_Statistics_32px_2.png"))); // NOI18N
         iconAbout1.setToolTipText("");
+        PanelStatistic.add(iconAbout1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
 
         about1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         about1.setForeground(new java.awt.Color(255, 255, 255));
         about1.setText("Statistic");
+        PanelStatistic.add(about1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 14, -1, -1));
 
-        javax.swing.GroupLayout PanelStatisticLayout = new javax.swing.GroupLayout(PanelStatistic);
-        PanelStatistic.setLayout(PanelStatisticLayout);
-        PanelStatisticLayout.setHorizontalGroup(
-            PanelStatisticLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelStatisticLayout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(iconAbout1)
-                .addGap(6, 6, 6)
-                .addComponent(about1))
-        );
-        PanelStatisticLayout.setVerticalGroup(
-            PanelStatisticLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelStatisticLayout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addComponent(iconAbout1))
-            .addGroup(PanelStatisticLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(about1))
-        );
-
-        sidePanel.add(PanelStatistic, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 330, 60));
+        menuPanel.add(PanelStatistic, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 330, 60));
 
         PanelAbout.setBackground(new java.awt.Color(165, 178, 243));
         PanelAbout.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -253,35 +182,20 @@ public class StartGUI extends javax.swing.JFrame {
                 PanelAboutMousePressed(evt);
             }
         });
+        PanelAbout.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         iconAbout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/data/icons/icons8_Info_32px.png"))); // NOI18N
         iconAbout.setToolTipText("");
+        PanelAbout.add(iconAbout, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
 
         about.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         about.setForeground(new java.awt.Color(255, 255, 255));
         about.setText("About");
+        PanelAbout.add(about, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 14, -1, -1));
 
-        javax.swing.GroupLayout PanelAboutLayout = new javax.swing.GroupLayout(PanelAbout);
-        PanelAbout.setLayout(PanelAboutLayout);
-        PanelAboutLayout.setHorizontalGroup(
-            PanelAboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelAboutLayout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(iconAbout)
-                .addGap(6, 6, 6)
-                .addComponent(about))
-        );
-        PanelAboutLayout.setVerticalGroup(
-            PanelAboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelAboutLayout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addComponent(iconAbout))
-            .addGroup(PanelAboutLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(about))
-        );
+        menuPanel.add(PanelAbout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 330, 60));
 
-        sidePanel.add(PanelAbout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 330, 60));
+        sidePanel.add(menuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 330, 570));
 
         BG.add(sidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 683));
 
@@ -376,6 +290,10 @@ public class StartGUI extends javax.swing.JFrame {
         resetColor(PanelSignUP);
         resetColor(PanelAbout);
         resetColor(PanelStatistic);
+        PanelSignIn.setSize(330, 180);
+        PanelSignUP.setLocation(0, 180);
+        PanelStatistic.setLocation(0, 240);
+        PanelAbout.setLocation(0, 300);
     }//GEN-LAST:event_PanelSignInMousePressed
 
     private void PanelStatisticMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelStatisticMousePressed
@@ -478,6 +396,7 @@ public class StartGUI extends javax.swing.JFrame {
     private javax.swing.JLabel labelPassword;
     private javax.swing.JLabel labelUsername;
     private javax.swing.JLabel logo;
+    private javax.swing.JPanel menuPanel;
     private javax.swing.JPanel sidePanel;
     // End of variables declaration//GEN-END:variables
 }
