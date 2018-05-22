@@ -5,7 +5,25 @@
  */
 package AppPackage;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import javax.swing.JFrame;
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
 /**
  *
  * @author Imanda Syahrul R
@@ -15,6 +33,13 @@ public class FormSignUp extends javax.swing.JFrame {
     /**
      * Creates new form FormSignUp
      */
+    private static final String EXCEL_FILE_LOCATION = "src/data/UserData.xls";
+    private String namaDepan;
+    private String namaBelakang;
+    private String password;
+    private String alamat;
+    private String jenisAkun;
+
     public FormSignUp() {
         initComponents();
     }
@@ -31,17 +56,17 @@ public class FormSignUp extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         labelFirstName = new javax.swing.JLabel();
         labelFirstName1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        jTextFieldNamaDepan = new javax.swing.JTextField();
+        jTextFieldNamaBelakang = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
-        jTextField3 = new javax.swing.JTextField();
+        jTextFieldAlamat = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButtonPemilik = new javax.swing.JRadioButton();
+        jRadioButtonPencari = new javax.swing.JRadioButton();
         jLabel5 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        jPanelBuatAkun = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         exit = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
@@ -57,11 +82,16 @@ public class FormSignUp extends javax.swing.JFrame {
         labelFirstName1.setText("Nama Depan");
         jPanel1.add(labelFirstName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, -1, -1));
 
-        jTextField1.setText("jTextField1");
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 120, -1));
+        jTextFieldNamaDepan.setText("jTextField1");
+        jTextFieldNamaDepan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNamaDepanActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTextFieldNamaDepan, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 120, -1));
 
-        jTextField2.setText("jTextField1");
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 120, -1));
+        jTextFieldNamaBelakang.setText("jTextField1");
+        jPanel1.add(jTextFieldNamaBelakang, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 120, -1));
 
         jLabel1.setText("Password");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, -1, -1));
@@ -74,8 +104,13 @@ public class FormSignUp extends javax.swing.JFrame {
         });
         jPanel1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 120, -1));
 
-        jTextField3.setText("jTextField3");
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 290, -1));
+        jTextFieldAlamat.setText("jTextField3");
+        jTextFieldAlamat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldAlamatActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTextFieldAlamat, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 290, -1));
 
         jLabel2.setText("Alamat");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, -1, -1));
@@ -83,36 +118,62 @@ public class FormSignUp extends javax.swing.JFrame {
         jLabel3.setText("Jenis Akun");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, -1, -1));
 
-        jRadioButton1.setText("Pemilik Kost");
-        jPanel1.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, -1, -1));
+        jRadioButtonPemilik.setText("Pemilik Kost");
+        jRadioButtonPemilik.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonPemilikActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jRadioButtonPemilik, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, -1, -1));
 
-        jRadioButton2.setText("Pencari Kost");
-        jPanel1.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, -1, -1));
+        jRadioButtonPencari.setText("Pencari Kost");
+        jRadioButtonPencari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonPencariActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jRadioButtonPencari, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel5.setText("KosQu");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, -1, -1));
 
+        jPanelBuatAkun.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jPanelBuatAkunAncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        jPanelBuatAkun.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelBuatAkunMouseClicked(evt);
+            }
+        });
+
         jLabel4.setText("Buat Akun");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelBuatAkunLayout = new javax.swing.GroupLayout(jPanelBuatAkun);
+        jPanelBuatAkun.setLayout(jPanelBuatAkunLayout);
+        jPanelBuatAkunLayout.setHorizontalGroup(
+            jPanelBuatAkunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelBuatAkunLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addComponent(jLabel4)
                 .addContainerGap(25, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        jPanelBuatAkunLayout.setVerticalGroup(
+            jPanelBuatAkunLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelBuatAkunLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel4)
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 410, 100, 40));
+        jPanel1.add(jPanelBuatAkun, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 410, 100, 40));
+        jPanelBuatAkun.getAccessibleContext().setAccessibleName("TombolBuatAkun");
 
         exit.setBackground(new java.awt.Color(255, 255, 255));
         exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/data/icons/icons8_Delete_32px_4.png"))); // NOI18N
@@ -144,19 +205,105 @@ public class FormSignUp extends javax.swing.JFrame {
 
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
         // TODO add your handling code here:
+
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
     private void exitMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMousePressed
         // TODO add your handling code here:
         //@author Imanda_Syahrul_Ramadhan
         exitFrame(FormSignUp.this);
-        
+
     }//GEN-LAST:event_exitMousePressed
-    
-    void exitFrame(JFrame frame){
+
+    private void jTextFieldNamaDepanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNamaDepanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNamaDepanActionPerformed
+
+    private void jPanelBuatAkunAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanelBuatAkunAncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanelBuatAkunAncestorAdded
+
+    private void jTextFieldAlamatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAlamatActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldAlamatActionPerformed
+
+    private void jRadioButtonPemilikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonPemilikActionPerformed
+        // TODO add your handling code here:
+        setJenisAkun("pemilik");
+    }//GEN-LAST:event_jRadioButtonPemilikActionPerformed
+
+    private void jRadioButtonPencariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonPencariActionPerformed
+        // TODO add your handling code here:
+        setJenisAkun("pencari");
+    }//GEN-LAST:event_jRadioButtonPencariActionPerformed
+
+    private void jPanelBuatAkunMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBuatAkunMouseClicked
+
+        try {
+            setNamaDepan(jTextFieldNamaDepan.getText());
+            setNamaBelakang(jTextFieldNamaBelakang.getText());
+            setPassword(jPasswordField1.getText());
+            setAlamat(jTextFieldAlamat.getText());
+            setJenisAkun(jTextFieldNamaDepan.getText());
+
+            System.out.println(getNamaDepan());
+            System.out.println(getNamaBelakang());
+            System.out.println(getPassword());
+            System.out.println(getAlamat());
+            System.out.println(getJenisAkun());
+            ProcessAndWriteExcelFile();
+        } catch (IOException | InvalidFormatException ex) {
+            System.out.println("GAGAL MENJALANKAN ProcessAndWriteExcelFile()");
+        }
+    }//GEN-LAST:event_jPanelBuatAkunMouseClicked
+
+    private void ProcessAndWriteExcelFile() throws IOException, InvalidFormatException {
+
+        String isi;
+        int i = 1;
+
+        FileInputStream fis = new FileInputStream("src/data/UserData.xlsx");
+//        Workbook wb = WorkbookFactory.create(fis);
+        Workbook wb = new XSSFWorkbook(fis);
+        Sheet sh = wb.getSheet("Sheet1");
+        int noOfRow = sh.getLastRowNum();
+        System.out.println(noOfRow);
+
+        Row row = sh.getRow(i);
+        Cell cell = row.getCell(0);
+        isi = cell.getStringCellValue();
+        System.out.println("ISI : " + isi);
+
+        while (isi.length() > 1) {
+            System.out.println("ISI : " + isi);
+            row = sh.getRow(i++);
+            cell = row.getCell(0);
+            isi = cell.getStringCellValue();
+        }
+
+        cell.setCellValue(getNamaDepan());
+        cell = row.createCell(1);
+        cell.setCellValue(getPassword());
+        cell = row.createCell(2);
+        cell.setCellValue(getJenisAkun());
+        cell = row.createCell(3);
+        cell.setCellValue(getNamaDepan() + " " + getNamaBelakang());
+        cell = row.createCell(4);
+        cell.setCellValue(getAlamat());
+
+        System.out.println(cell.getStringCellValue());
+
+        try (FileOutputStream fos = new FileOutputStream("src/data/UserData.xlsx")) {
+            wb.write(fos);
+            fos.flush();
+        }
+        System.out.println("Done");
+    }
+
+    void exitFrame(JFrame frame) {
         frame.dispose();
     }
-    
+
     /**
      * @param args the command line arguments
      */
@@ -201,14 +348,85 @@ public class FormSignUp extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanelBuatAkun;
     private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JRadioButton jRadioButtonPemilik;
+    private javax.swing.JRadioButton jRadioButtonPencari;
+    private javax.swing.JTextField jTextFieldAlamat;
+    private javax.swing.JTextField jTextFieldNamaBelakang;
+    private javax.swing.JTextField jTextFieldNamaDepan;
     private javax.swing.JLabel labelFirstName;
     private javax.swing.JLabel labelFirstName1;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the namaDepan
+     */
+    public String getNamaDepan() {
+        return namaDepan;
+    }
+
+    /**
+     * @param namaDepan the namaDepan to set
+     */
+    public void setNamaDepan(String namaDepan) {
+        this.namaDepan = namaDepan;
+    }
+
+    /**
+     * @return the namaBelakang
+     */
+    public String getNamaBelakang() {
+        return namaBelakang;
+    }
+
+    /**
+     * @param namaBelakang the namaBelakang to set
+     */
+    public void setNamaBelakang(String namaBelakang) {
+        this.namaBelakang = namaBelakang;
+    }
+
+    /**
+     * @return the password
+     */
+    public String getPassword() {
+        return password;
+    }
+
+    /**
+     * @param password the password to set
+     */
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    /**
+     * @return the alamat
+     */
+    public String getAlamat() {
+        return alamat;
+    }
+
+    /**
+     * @param alamat the alamat to set
+     */
+    public void setAlamat(String alamat) {
+        this.alamat = alamat;
+    }
+
+    /**
+     * @return the jenisAkun
+     */
+    public String getJenisAkun() {
+        return jenisAkun;
+    }
+
+    /**
+     * @param jenisAkun the jenisAkun to set
+     */
+    public void setJenisAkun(String jenisAkun) {
+        this.jenisAkun = jenisAkun;
+    }
+
 }

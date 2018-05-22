@@ -422,9 +422,8 @@ public class StartGUI extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(StartGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        
+     
         //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new RunnableImpl());
 //        RunnableImpl run = new RunnableImpl();
