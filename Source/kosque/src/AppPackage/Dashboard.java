@@ -45,7 +45,20 @@ public class Dashboard extends javax.swing.JFrame {
         PanelSetting = new javax.swing.JPanel();
         iconAbout = new javax.swing.JLabel();
         about = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jPanel2 = new javax.swing.JPanel();
+        basedOn = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jPanel3 = new javax.swing.JPanel();
+        basedOn1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jPanel4 = new javax.swing.JPanel();
+        basedOn3 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jPanel6 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(1119, 685));
@@ -181,7 +194,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         about.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         about.setForeground(new java.awt.Color(255, 255, 255));
-        about.setText("Setting");
+        about.setText("Account Setting");
 
         javax.swing.GroupLayout PanelSettingLayout = new javax.swing.GroupLayout(PanelSetting);
         PanelSetting.setLayout(PanelSettingLayout);
@@ -207,18 +220,89 @@ public class Dashboard extends javax.swing.JFrame {
 
         BG.add(sidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 683));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 790, Short.MAX_VALUE)
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        basedOn.setBackground(new java.awt.Color(204, 255, 255));
+        basedOn.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setBackground(new java.awt.Color(102, 204, 255));
+        jLabel1.setText("jLabel1");
+        basedOn.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 30));
+
+        jScrollPane2.setBackground(new java.awt.Color(204, 255, 255));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1166, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 680, Short.MAX_VALUE)
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 161, Short.MAX_VALUE)
         );
 
-        BG.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, 790, 680));
+        jScrollPane2.setViewportView(jPanel3);
+
+        basedOn.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 640, 180));
+
+        jPanel2.add(basedOn, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 67, 638, 213));
+
+        basedOn1.setBackground(new java.awt.Color(204, 255, 255));
+        basedOn1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setBackground(new java.awt.Color(102, 204, 255));
+        jLabel2.setText("jLabel1");
+        basedOn1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 30));
+
+        jScrollPane3.setBackground(new java.awt.Color(204, 255, 255));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1166, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 161, Short.MAX_VALUE)
+        );
+
+        jScrollPane3.setViewportView(jPanel4);
+
+        basedOn1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 640, 180));
+
+        jPanel2.add(basedOn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 374, -1, -1));
+
+        basedOn3.setBackground(new java.awt.Color(204, 255, 255));
+        basedOn3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setBackground(new java.awt.Color(102, 204, 255));
+        jLabel4.setText("jLabel1");
+        basedOn3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 30));
+
+        jScrollPane5.setBackground(new java.awt.Color(204, 255, 255));
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1166, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 161, Short.MAX_VALUE)
+        );
+
+        jScrollPane5.setViewportView(jPanel6);
+
+        basedOn3.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 640, 180));
+
+        jPanel2.add(basedOn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 674, -1, -1));
+
+        jScrollPane1.setViewportView(jPanel2);
+
+        BG.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, 790, 680));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -319,11 +403,28 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel PanelStatistic;
     private javax.swing.JLabel about;
     private javax.swing.JLabel about1;
+    private javax.swing.JPanel basedOn;
+    private javax.swing.JPanel basedOn1;
+    private javax.swing.JPanel basedOn2;
+    private javax.swing.JPanel basedOn3;
     private javax.swing.JLabel iconAbout;
     private javax.swing.JLabel iconAbout1;
     private javax.swing.JLabel iconLabel1;
     private javax.swing.JLabel iconLogout;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JLabel judulApp;
     private javax.swing.JPanel sidePanel;
     // End of variables declaration//GEN-END:variables
