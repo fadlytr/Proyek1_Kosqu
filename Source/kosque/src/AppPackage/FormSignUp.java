@@ -5,6 +5,7 @@
  */
 package AppPackage;
 
+import java.awt.Point;
 import javax.swing.JFrame;
 /**
  *
@@ -29,6 +30,7 @@ public class FormSignUp extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        dragArea = new javax.swing.JPanel();
         labelFirstName = new javax.swing.JLabel();
         labelFirstName1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -47,9 +49,38 @@ public class FormSignUp extends javax.swing.JFrame {
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        dragArea.setBackground(new java.awt.Color(255, 255, 255));
+        dragArea.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                dragAreaMouseDragged(evt);
+            }
+        });
+        dragArea.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                dragAreaMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                dragAreaMouseReleased(evt);
+            }
+        });
+
+        javax.swing.GroupLayout dragAreaLayout = new javax.swing.GroupLayout(dragArea);
+        dragArea.setLayout(dragAreaLayout);
+        dragAreaLayout.setHorizontalGroup(
+            dragAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 450, Short.MAX_VALUE)
+        );
+        dragAreaLayout.setVerticalGroup(
+            dragAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(dragArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 20));
 
         labelFirstName.setText("Nama Belakang");
         jPanel1.add(labelFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, -1, -1));
@@ -152,11 +183,27 @@ public class FormSignUp extends javax.swing.JFrame {
         exitFrame(FormSignUp.this);
         
     }//GEN-LAST:event_exitMousePressed
+
+    private void dragAreaMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dragAreaMouseDragged
+        // TODO add your handling code here:
+        Point currCoords = evt.getLocationOnScreen();
+        FormSignUp.this.setLocation(currCoords.x - compCoords.x, currCoords.y - compCoords.y);
+    }//GEN-LAST:event_dragAreaMouseDragged
+
+    private void dragAreaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dragAreaMousePressed
+        // TODO add your handling code here:
+        compCoords=evt.getPoint();
+    }//GEN-LAST:event_dragAreaMousePressed
+
+    private void dragAreaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dragAreaMouseReleased
+        // TODO add your handling code here:
+        compCoords=null;
+    }//GEN-LAST:event_dragAreaMouseReleased
     
     void exitFrame(JFrame frame){
         frame.dispose();
     }
-    
+    static Point compCoords;
     /**
      * @param args the command line arguments
      */
@@ -188,12 +235,14 @@ public class FormSignUp extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new FormSignUp().setVisible(true);
+               
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
+    private javax.swing.JPanel dragArea;
     private javax.swing.JLabel exit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
