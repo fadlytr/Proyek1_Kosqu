@@ -220,6 +220,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         BG.add(sidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 683));
 
+        jPanel2.setBackground(new java.awt.Color(153, 153, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         basedOn.setBackground(new java.awt.Color(204, 255, 255));
@@ -405,7 +406,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel about1;
     private javax.swing.JPanel basedOn;
     private javax.swing.JPanel basedOn1;
-    private javax.swing.JPanel basedOn2;
     private javax.swing.JPanel basedOn3;
     private javax.swing.JLabel iconAbout;
     private javax.swing.JLabel iconAbout1;
@@ -413,17 +413,14 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel iconLogout;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JLabel judulApp;
     private javax.swing.JPanel sidePanel;
