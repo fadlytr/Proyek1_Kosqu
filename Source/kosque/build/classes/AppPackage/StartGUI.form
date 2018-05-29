@@ -56,7 +56,7 @@
         <Container class="javax.swing.JPanel" name="sidePanel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Color blue="f3" green="b2" red="a5" type="rgb"/>
             </Property>
           </Properties>
           <Constraints>
@@ -78,7 +78,7 @@
                   <Font name="Arial Black" size="48" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="33" red="0" type="rgb"/>
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="KosQu"/>
               </Properties>
@@ -91,7 +91,7 @@
             <Container class="javax.swing.JPanel" name="menuPanel">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                  <Color blue="f3" green="b2" red="a5" type="rgb"/>
                 </Property>
               </Properties>
               <Constraints>

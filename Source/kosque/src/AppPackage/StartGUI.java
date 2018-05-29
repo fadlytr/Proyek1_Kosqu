@@ -6,6 +6,7 @@
 package AppPackage;
 
 import java.awt.Color;
+import java.awt.Point;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JPanel;
@@ -72,16 +73,16 @@ public class StartGUI extends javax.swing.JFrame {
 
         BG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        sidePanel.setBackground(new java.awt.Color(255, 255, 255));
+        sidePanel.setBackground(new java.awt.Color(165, 178, 243));
         sidePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         judulApp.setBackground(new java.awt.Color(0, 51, 102));
         judulApp.setFont(new java.awt.Font("Arial Black", 1, 48)); // NOI18N
-        judulApp.setForeground(new java.awt.Color(0, 51, 102));
+        judulApp.setForeground(new java.awt.Color(255, 255, 255));
         judulApp.setText("KosQu");
         sidePanel.add(judulApp, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        menuPanel.setBackground(new java.awt.Color(255, 255, 255));
+        menuPanel.setBackground(new java.awt.Color(165, 178, 243));
         menuPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         PanelSignIn.setBackground(new java.awt.Color(165, 178, 243));
@@ -262,6 +263,11 @@ public class StartGUI extends javax.swing.JFrame {
 
     private void buttonSigninActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSigninActionPerformed
         // TODO add your handling code here:
+        Point Coords=this.getLocationOnScreen();
+        
+        this.dispose();
+        new Dashboard().setVisible(true);
+        
     }//GEN-LAST:event_buttonSigninActionPerformed
 
     private void PanelSignUPMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelSignUPMousePressed
@@ -311,6 +317,7 @@ public class StartGUI extends javax.swing.JFrame {
         resetColor(PanelSignUP);
         resetColor(PanelAbout);
         resetColor(PanelSignIn);
+        new Statistic().setVisible(true);
     }//GEN-LAST:event_PanelStatisticMousePressed
     
     

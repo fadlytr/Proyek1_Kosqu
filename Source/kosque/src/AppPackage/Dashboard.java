@@ -390,6 +390,8 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void PanelLogout1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelLogout1MousePressed
         // TODO add your handling code here:
+        this.dispose();
+        new StartGUI().setVisible(true);
     }//GEN-LAST:event_PanelLogout1MousePressed
 
     //@author Imanda_Syahrul_Ramadhan
