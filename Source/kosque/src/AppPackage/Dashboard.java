@@ -32,6 +32,9 @@ public class Dashboard extends javax.swing.JFrame {
 
         BG = new javax.swing.JPanel();
         sidePanel = new javax.swing.JPanel();
+        PanelLogout1 = new javax.swing.JPanel();
+        iconLogout1 = new javax.swing.JLabel();
+        Logout1 = new javax.swing.JLabel();
         judulApp = new javax.swing.JLabel();
         PanelFilter = new javax.swing.JPanel();
         iconLabel1 = new javax.swing.JLabel();
@@ -39,7 +42,7 @@ public class Dashboard extends javax.swing.JFrame {
         PanelStatistic = new javax.swing.JPanel();
         iconAbout1 = new javax.swing.JLabel();
         about1 = new javax.swing.JLabel();
-        PanelLogout = new javax.swing.JPanel();
+        PanelBookmark = new javax.swing.JPanel();
         iconLogout = new javax.swing.JLabel();
         Logout = new javax.swing.JLabel();
         PanelSetting = new javax.swing.JPanel();
@@ -67,6 +70,42 @@ public class Dashboard extends javax.swing.JFrame {
 
         sidePanel.setBackground(new java.awt.Color(255, 255, 255));
         sidePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        PanelLogout1.setBackground(new java.awt.Color(165, 178, 243));
+        PanelLogout1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                PanelLogout1MousePressed(evt);
+            }
+        });
+
+        iconLogout1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/data/icons/icons8_Logout_Rounded_Up_32px_1.png"))); // NOI18N
+        iconLogout1.setToolTipText("");
+
+        Logout1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        Logout1.setForeground(new java.awt.Color(255, 255, 255));
+        Logout1.setText("Sign Out");
+
+        javax.swing.GroupLayout PanelLogout1Layout = new javax.swing.GroupLayout(PanelLogout1);
+        PanelLogout1.setLayout(PanelLogout1Layout);
+        PanelLogout1Layout.setHorizontalGroup(
+            PanelLogout1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelLogout1Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(iconLogout1)
+                .addGap(6, 6, 6)
+                .addComponent(Logout1))
+        );
+        PanelLogout1Layout.setVerticalGroup(
+            PanelLogout1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelLogout1Layout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addComponent(iconLogout1))
+            .addGroup(PanelLogout1Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(Logout1))
+        );
+
+        sidePanel.add(PanelLogout1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 330, 60));
 
         judulApp.setBackground(new java.awt.Color(0, 51, 102));
         judulApp.setFont(new java.awt.Font("Arial Black", 1, 48)); // NOI18N
@@ -144,43 +183,43 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(about1))
         );
 
-        sidePanel.add(PanelStatistic, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 330, 60));
+        sidePanel.add(PanelStatistic, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 330, 60));
 
-        PanelLogout.setBackground(new java.awt.Color(165, 178, 243));
-        PanelLogout.addMouseListener(new java.awt.event.MouseAdapter() {
+        PanelBookmark.setBackground(new java.awt.Color(165, 178, 243));
+        PanelBookmark.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                PanelLogoutMousePressed(evt);
+                PanelBookmarkMousePressed(evt);
             }
         });
 
-        iconLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/data/icons/icons8_Logout_Rounded_Up_32px_1.png"))); // NOI18N
+        iconLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/data/icons/icons8_Bookmark_Ribbon_32px_2.png"))); // NOI18N
         iconLogout.setToolTipText("");
 
         Logout.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         Logout.setForeground(new java.awt.Color(255, 255, 255));
-        Logout.setText("Sign Out");
+        Logout.setText("Bookmark");
 
-        javax.swing.GroupLayout PanelLogoutLayout = new javax.swing.GroupLayout(PanelLogout);
-        PanelLogout.setLayout(PanelLogoutLayout);
-        PanelLogoutLayout.setHorizontalGroup(
-            PanelLogoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelLogoutLayout.createSequentialGroup()
+        javax.swing.GroupLayout PanelBookmarkLayout = new javax.swing.GroupLayout(PanelBookmark);
+        PanelBookmark.setLayout(PanelBookmarkLayout);
+        PanelBookmarkLayout.setHorizontalGroup(
+            PanelBookmarkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelBookmarkLayout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addComponent(iconLogout)
                 .addGap(6, 6, 6)
                 .addComponent(Logout))
         );
-        PanelLogoutLayout.setVerticalGroup(
-            PanelLogoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelLogoutLayout.createSequentialGroup()
+        PanelBookmarkLayout.setVerticalGroup(
+            PanelBookmarkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelBookmarkLayout.createSequentialGroup()
                 .addGap(11, 11, 11)
                 .addComponent(iconLogout))
-            .addGroup(PanelLogoutLayout.createSequentialGroup()
+            .addGroup(PanelBookmarkLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(Logout))
         );
 
-        sidePanel.add(PanelLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 330, 60));
+        sidePanel.add(PanelBookmark, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 330, 60));
 
         PanelSetting.setBackground(new java.awt.Color(165, 178, 243));
         PanelSetting.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -216,18 +255,18 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(about))
         );
 
-        sidePanel.add(PanelSetting, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 330, 60));
+        sidePanel.add(PanelSetting, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 330, 60));
 
         BG.add(sidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 683));
 
-        jPanel2.setBackground(new java.awt.Color(153, 153, 255));
+        jPanel2.setBackground(new java.awt.Color(0, 0, 204));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         basedOn.setBackground(new java.awt.Color(204, 255, 255));
         basedOn.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(102, 204, 255));
-        jLabel1.setText("jLabel1");
+        jLabel1.setText("Based On");
         basedOn.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 30));
 
         jScrollPane2.setBackground(new java.awt.Color(204, 255, 255));
@@ -253,7 +292,7 @@ public class Dashboard extends javax.swing.JFrame {
         basedOn1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setBackground(new java.awt.Color(102, 204, 255));
-        jLabel2.setText("jLabel1");
+        jLabel2.setText("Based On");
         basedOn1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 30));
 
         jScrollPane3.setBackground(new java.awt.Color(204, 255, 255));
@@ -326,7 +365,6 @@ public class Dashboard extends javax.swing.JFrame {
         
         resetColor(PanelSetting);
         resetColor(PanelStatistic);
-        new FormSignUp().setVisible(true);
     }//GEN-LAST:event_PanelFilterMousePressed
 
     private void PanelStatisticMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelStatisticMousePressed
@@ -346,9 +384,13 @@ public class Dashboard extends javax.swing.JFrame {
         resetColor(PanelStatistic);
     }//GEN-LAST:event_PanelSettingMousePressed
 
-    private void PanelLogoutMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelLogoutMousePressed
+    private void PanelBookmarkMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelBookmarkMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_PanelLogoutMousePressed
+    }//GEN-LAST:event_PanelBookmarkMousePressed
+
+    private void PanelLogout1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelLogout1MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PanelLogout1MousePressed
 
     //@author Imanda_Syahrul_Ramadhan
     
@@ -398,8 +440,10 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel BG;
     private javax.swing.JLabel Loggin1;
     private javax.swing.JLabel Logout;
+    private javax.swing.JLabel Logout1;
+    private javax.swing.JPanel PanelBookmark;
     private javax.swing.JPanel PanelFilter;
-    private javax.swing.JPanel PanelLogout;
+    private javax.swing.JPanel PanelLogout1;
     private javax.swing.JPanel PanelSetting;
     private javax.swing.JPanel PanelStatistic;
     private javax.swing.JLabel about;
@@ -411,6 +455,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel iconAbout1;
     private javax.swing.JLabel iconLabel1;
     private javax.swing.JLabel iconLogout;
+    private javax.swing.JLabel iconLogout1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;

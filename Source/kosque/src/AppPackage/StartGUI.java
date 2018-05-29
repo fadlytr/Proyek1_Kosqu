@@ -286,14 +286,23 @@ public class StartGUI extends javax.swing.JFrame {
     private void PanelSignInMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelSignInMousePressed
         //@author Imanda_Syahrul_Ramadhan
         // TODO add your handling code here:
-        setColor(PanelSignIn);
-        resetColor(PanelSignUP);
-        resetColor(PanelAbout);
-        resetColor(PanelStatistic);
-        PanelSignIn.setSize(330, 180);
-        PanelSignUP.setLocation(0, 180);
-        PanelStatistic.setLocation(0, 240);
-        PanelAbout.setLocation(0, 300);
+        if(PanelSignIn.getBackground().equals(new Color(165,178,243))){
+            setColor(PanelSignIn);
+            resetColor(PanelSignUP);
+            resetColor(PanelAbout);
+            resetColor(PanelStatistic);
+            PanelSignIn.setSize(330, 180);
+            PanelSignUP.setLocation(0, 180);
+            PanelStatistic.setLocation(0, 240);
+            PanelAbout.setLocation(0, 300);
+        }
+        else{
+            resetColor(PanelSignIn);
+            PanelSignIn.setSize(330, 60);
+            PanelSignUP.setLocation(0, 60);
+            PanelStatistic.setLocation(0, 120);
+            PanelAbout.setLocation(0, 180);
+        }
     }//GEN-LAST:event_PanelSignInMousePressed
 
     private void PanelStatisticMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelStatisticMousePressed

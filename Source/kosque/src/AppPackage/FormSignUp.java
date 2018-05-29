@@ -87,25 +87,24 @@ public class FormSignUp extends javax.swing.JFrame {
 
         labelFirstName1.setText("Nama Depan");
         jPanel1.add(labelFirstName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, -1, -1));
-
-        jTextField1.setText("jTextField1");
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 120, -1));
 
-        jTextField2.setText("jTextField1");
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 120, -1));
 
         jLabel1.setText("Password");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, -1, -1));
 
-        jPasswordField1.setText("jPasswordField1");
         jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPasswordField1ActionPerformed(evt);
             }
         });
         jPanel1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 120, -1));
-
-        jTextField3.setText("jTextField3");
         jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 290, -1));
 
         jLabel2.setText("Alamat");
@@ -199,6 +198,10 @@ public class FormSignUp extends javax.swing.JFrame {
         // TODO add your handling code here:
         compCoords=null;
     }//GEN-LAST:event_dragAreaMouseReleased
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
     
     void exitFrame(JFrame frame){
         frame.dispose();
