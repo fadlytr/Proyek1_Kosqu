@@ -21,10 +21,9 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  *
  * @author Fadly
  */
-public class filter2Obj {
+public class filter1Obj {
     static List<ObjectXcle> filter = new ArrayList<>();
-    
-    public List<ObjectXcle> filterHargKec(int max, int min, String kec) throws IOException {
+    public List<ObjectXcle> filterHarga(int max, int min) throws IOException {
       FileInputStream xcleFile = new FileInputStream(new File("src\\Object\\data_terbaru.xlsx"));
       
       XSSFWorkbook workbook = new XSSFWorkbook(xcleFile);
@@ -59,22 +58,21 @@ public class filter2Obj {
           
           ObjectXcle str = new ObjectXcle();
           str.setHarga((int) harga.getNumericCellValue());
-          str.setKecamatan(kecam.getStringCellValue());
-          
-          if (str.getHarga()>=min && str.getHarga()<=max && str.getKecamatan().equals(kec)){
+          if (str.getHarga()>=min && str.getHarga()<=max){
               str.setAkses(akses.getStringCellValue());
               str.setLinkPhoto(poto.getStringCellValue());
               str.setArea(area.getStringCellValue());
-              str.setUniversity(univ.getStringCellValue());
-              str.setAksel(akSel.getStringCellValue());
-              str.setAlamat(alamat.getStringCellValue());
-              str.setBathfas(bathFas.getStringCellValue());
-              str.setId(id.getStringCellValue());
-              str.setKelurahan(kelur.getStringCellValue());
-              str.setNama(namaKos.getStringCellValue());
-              str.setPakfas(pakFas.getStringCellValue());
-              str.setRoomfas(roomFas.getStringCellValue());
               str.setTipe(type.getStringCellValue());
+              str.setUniversity(univ.getStringCellValue());
+              str.setKecamatan(kecam.getStringCellValue());
+              str.setAksel(akSel.getStringCellValue());
+              str.setAlamat(alamat.getStringCellValue());
+              str.setBathfas(bathFas.getStringCellValue());
+              str.setId(id.getStringCellValue());
+              str.setKelurahan(kelur.getStringCellValue());
+              str.setNama(namaKos.getStringCellValue());
+              str.setPakfas(pakFas.getStringCellValue());
+              str.setRoomfas(roomFas.getStringCellValue());
               str.setUmfas(umFas.getStringCellValue());
               str.setKetLain(ketLain.getStringCellValue());
               str.setKetBi(ketBi.getStringCellValue());
@@ -87,7 +85,7 @@ public class filter2Obj {
         
         return filter;
 }
-    public List<ObjectXcle> filterHargTipe(int max, int min, String tipe) throws IOException {
+    public List<ObjectXcle> filterTipe(String tipe) throws IOException {
       FileInputStream xcleFile = new FileInputStream(new File("src\\Object\\data_terbaru.xlsx"));
       
       XSSFWorkbook workbook = new XSSFWorkbook(xcleFile);
@@ -121,37 +119,35 @@ public class filter2Obj {
           Cell univ = currentRow.getCell(20);
           
           ObjectXcle str = new ObjectXcle();
-          str.setHarga((int) harga.getNumericCellValue());
           str.setTipe(type.getStringCellValue());
-          
-          if (str.getHarga()>=min && str.getHarga()<=max && str.getTipe().equals(tipe)){
-              str.setId(id.getStringCellValue());
-              str.setNama(namaKos.getStringCellValue());
-              str.setRoomfas(roomFas.getStringCellValue());
-              str.setArea(area.getStringCellValue());
-              str.setBathfas(bathFas.getStringCellValue());
-              str.setUmfas(umFas.getStringCellValue());
-              str.setPakfas(pakFas.getStringCellValue());
-              str.setAksel(akSel.getStringCellValue());
+          if (str.getTipe().equals(tipe)){
               str.setAkses(akses.getStringCellValue());
+              str.setLinkPhoto(poto.getStringCellValue());
+              str.setArea(area.getStringCellValue());
+              str.setHarga((int)harga.getNumericCellValue());
+              str.setKecamatan(kecam.getStringCellValue());
+              str.setAksel(akSel.getStringCellValue());
+              str.setUniversity(univ.getStringCellValue());
+              str.setAlamat(alamat.getStringCellValue());
+              str.setBathfas(bathFas.getStringCellValue());
+              str.setId(id.getStringCellValue());
+              str.setKelurahan(kelur.getStringCellValue());
+              str.setNama(namaKos.getStringCellValue());
+              str.setPakfas(pakFas.getStringCellValue());
+              str.setRoomfas(roomFas.getStringCellValue());
+              str.setUmfas(umFas.getStringCellValue());
               str.setKetLain(ketLain.getStringCellValue());
               str.setKetBi(ketBi.getStringCellValue());
               str.setDesKet(desKet.getStringCellValue());
               str.setDesKos(desKos.getStringCellValue());
-              str.setAlamat(alamat.getStringCellValue());
-              str.setKelurahan(kelur.getStringCellValue());
-              str.setKecamatan(kecam.getStringCellValue());
               str.setOwner(owner.getStringCellValue());
-              str.setLinkPhoto(poto.getStringCellValue());
-              str.setUniversity(univ.getStringCellValue());
-              
               filter.add(str);
           }
       }
         
         return filter;
 }
-    public List<ObjectXcle> filterKecTipe(String tipe, String kec) throws IOException {
+    public List<ObjectXcle> filterKecamatan(String kec) throws IOException {
       FileInputStream xcleFile = new FileInputStream(new File("src\\Object\\data_terbaru.xlsx"));
       
       XSSFWorkbook workbook = new XSSFWorkbook(xcleFile);
@@ -186,15 +182,14 @@ public class filter2Obj {
           
           ObjectXcle str = new ObjectXcle();
           str.setKecamatan(kecam.getStringCellValue());
-          str.setTipe(type.getStringCellValue());
-          
-          if (str.getKecamatan().equals(kec) && str.getTipe().equals(tipe)){
+          if (str.getKecamatan().equals(kec)){
               str.setAkses(akses.getStringCellValue());
               str.setLinkPhoto(poto.getStringCellValue());
               str.setArea(area.getStringCellValue());
-              str.setUniversity(univ.getStringCellValue());
-              str.setHarga((int) harga.getNumericCellValue());
+              str.setTipe(type.getStringCellValue());
+              str.setHarga((int)harga.getNumericCellValue());
               str.setAksel(akSel.getStringCellValue());
+              str.setUniversity(univ.getStringCellValue());
               str.setAlamat(alamat.getStringCellValue());
               str.setBathfas(bathFas.getStringCellValue());
               str.setId(id.getStringCellValue());
@@ -215,3 +210,4 @@ public class filter2Obj {
         return filter;
 }
 }
+

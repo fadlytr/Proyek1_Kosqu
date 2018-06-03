@@ -12,7 +12,7 @@ package Object;
 
 public class ObjectXcle {
     double harga;
-    String alamat, namakos, id, kecamatan, tipe, roomfas, bathfas, umfas, pakfas, aksel, kelurahan, university, ketLain, ketBi, desKet, desKos, owner;
+    String alamat, namakos, id, kecamatan, tipe, roomfas, bathfas, umfas, pakfas, aksel, kelurahan, university, ketLain, ketBi, desKet, desKos, owner, area, linkPhoto, akses;
     public void setHarga(double harga){
         this.harga=harga;
     }
@@ -66,6 +66,15 @@ public class ObjectXcle {
     }
     public void setOwner(String owner){
         this.owner=owner;
+    }
+    public void setArea(String area){
+        this.area=area;
+    }
+    public void setLinkPhoto(String linkPhoto){
+        this.linkPhoto=linkPhoto;
+    }
+    public void setAkses(String akses){
+        this.akses=akses;
     }
     
     public double getHarga(){
@@ -121,5 +130,14 @@ public class ObjectXcle {
     }
     public String getOwner(){
         return this.owner;
+    }
+    public String getArea(){
+        return this.area;
+    }
+    public String getLinkPhoto(){
+        return this.linkPhoto;
+    }
+    public String getAkses(){
+        return this.akses;
     }
 }

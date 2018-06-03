@@ -23,7 +23,8 @@ public class FilterKos {
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
         filter2Obj fil2 = new filter2Obj();
-        List<ObjectXcle> fin = fil2.filterHargKec(2000000,2000, "Andir");
+        filter3Obj fil3 = new filter3Obj();
+        List<ObjectXcle> fin = fil3.filter3Object(200000000,20000, "Andir", "Campuran");
         String macam;
         String[] part;
         int i;
