@@ -39,6 +39,8 @@ public class Dashboard extends javax.swing.JFrame {
         PanelFilter = new javax.swing.JPanel();
         iconLabel1 = new javax.swing.JLabel();
         Loggin1 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jPanel1 = new javax.swing.JPanel();
         PanelStatistic = new javax.swing.JPanel();
         iconAbout1 = new javax.swing.JLabel();
         about1 = new javax.swing.JLabel();
@@ -105,7 +107,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(Logout1))
         );
 
-        sidePanel.add(PanelLogout1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 330, 60));
+        sidePanel.add(PanelLogout1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 590, 330, 60));
 
         judulApp.setBackground(new java.awt.Color(0, 51, 102));
         judulApp.setFont(new java.awt.Font("Arial Black", 1, 48)); // NOI18N
@@ -127,6 +129,21 @@ public class Dashboard extends javax.swing.JFrame {
         Loggin1.setForeground(new java.awt.Color(255, 255, 255));
         Loggin1.setText("Filter");
 
+        jPanel1.setBackground(new java.awt.Color(165, 178, 243));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 328, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 441, Short.MAX_VALUE)
+        );
+
+        jScrollPane4.setViewportView(jPanel1);
+
         javax.swing.GroupLayout PanelFilterLayout = new javax.swing.GroupLayout(PanelFilter);
         PanelFilter.setLayout(PanelFilterLayout);
         PanelFilterLayout.setHorizontalGroup(
@@ -135,19 +152,25 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGap(10, 10, 10)
                 .addComponent(iconLabel1)
                 .addGap(6, 6, 6)
-                .addComponent(Loggin1))
+                .addComponent(Loggin1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jScrollPane4)
         );
         PanelFilterLayout.setVerticalGroup(
             PanelFilterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelFilterLayout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addComponent(iconLabel1))
-            .addGroup(PanelFilterLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(Loggin1))
+                .addGroup(PanelFilterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelFilterLayout.createSequentialGroup()
+                        .addGap(11, 11, 11)
+                        .addComponent(iconLabel1))
+                    .addGroup(PanelFilterLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(Loggin1)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane4))
         );
 
-        sidePanel.add(PanelFilter, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 330, 60));
+        sidePanel.add(PanelFilter, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 330, 300));
 
         PanelStatistic.setBackground(new java.awt.Color(165, 178, 243));
         PanelStatistic.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -183,7 +206,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(about1))
         );
 
-        sidePanel.add(PanelStatistic, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 330, 60));
+        sidePanel.add(PanelStatistic, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 330, 60));
 
         PanelBookmark.setBackground(new java.awt.Color(165, 178, 243));
         PanelBookmark.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -219,7 +242,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(Logout))
         );
 
-        sidePanel.add(PanelBookmark, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 330, 60));
+        sidePanel.add(PanelBookmark, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 330, 60));
 
         PanelSetting.setBackground(new java.awt.Color(165, 178, 243));
         PanelSetting.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -255,7 +278,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(about))
         );
 
-        sidePanel.add(PanelSetting, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 330, 60));
+        sidePanel.add(PanelSetting, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 530, 330, 60));
 
         BG.add(sidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 683));
 
@@ -461,6 +484,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -468,6 +492,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JLabel judulApp;
     private javax.swing.JPanel sidePanel;

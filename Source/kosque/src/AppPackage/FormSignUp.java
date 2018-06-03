@@ -6,6 +6,7 @@
 package AppPackage;
 
 import java.awt.Point;
+import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
 /**
  *
@@ -18,6 +19,11 @@ public class FormSignUp extends javax.swing.JFrame {
      */
     public FormSignUp() {
         initComponents();
+        
+        //   Group the radio buttons.
+        ButtonGroup AccountTypeButton = new ButtonGroup();
+        AccountTypeButton.add(jRadioButton1);
+        AccountTypeButton.add(jRadioButton2);
     }
 
     /**
@@ -114,6 +120,11 @@ public class FormSignUp extends javax.swing.JFrame {
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, -1, -1));
 
         jRadioButton1.setText("Pemilik Kost");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, -1, -1));
 
         jRadioButton2.setText("Pencari Kost");
@@ -202,11 +213,18 @@ public class FormSignUp extends javax.swing.JFrame {
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
     
     void exitFrame(JFrame frame){
         frame.dispose();
     }
     static Point compCoords;
+    
+    
+    
     /**
      * @param args the command line arguments
      */
