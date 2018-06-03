@@ -27,8 +27,6 @@ public class Kost extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        thumbnail = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         panelFasilitas3 = new javax.swing.JPanel();
         jLabel47 = new javax.swing.JLabel();
@@ -46,6 +44,8 @@ public class Kost extends javax.swing.JFrame {
         jLabel59 = new javax.swing.JLabel();
         jLabel60 = new javax.swing.JLabel();
         jLabel61 = new javax.swing.JLabel();
+        thumbnail = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         labelNama = new javax.swing.JLabel();
 
@@ -53,8 +53,6 @@ public class Kost extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1119, 685));
         setSize(new java.awt.Dimension(1119, 685));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/data/Logo.png"))); // NOI18N
 
         panelFasilitas3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -114,7 +112,7 @@ public class Kost extends javax.swing.JFrame {
                         .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(234, Short.MAX_VALUE))
+                        .addContainerGap(239, Short.MAX_VALUE))
                     .addGroup(panelFasilitas3Layout.createSequentialGroup()
                         .addGroup(panelFasilitas3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -162,6 +160,10 @@ public class Kost extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(panelFasilitas3);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 830, 290));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/data/Logo.png"))); // NOI18N
+
         javax.swing.GroupLayout thumbnailLayout = new javax.swing.GroupLayout(thumbnail);
         thumbnail.setLayout(thumbnailLayout);
         thumbnailLayout.setHorizontalGroup(
@@ -169,22 +171,17 @@ public class Kost extends javax.swing.JFrame {
             .addGroup(thumbnailLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(thumbnailLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 825, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         thumbnailLayout.setVerticalGroup(
             thumbnailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(thumbnailLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(thumbnail, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(thumbnail, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 280));
 
         jPanel2.setBackground(new java.awt.Color(204, 255, 255));
 
