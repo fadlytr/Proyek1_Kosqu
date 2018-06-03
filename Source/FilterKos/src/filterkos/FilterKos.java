@@ -23,12 +23,13 @@ public class FilterKos {
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
         filter2Obj fil2 = new filter2Obj();
-        List<ObjectXcle> fin = fil2.filterHargKec(200000000 , 2000, "Andir");
+        List<ObjectXcle> fin = fil2.filterHargKec(2000000,2000, "Andir");
+        String macam;
+        String[] part;
+        int i;
         
-        for (Iterator<ObjectXcle> i = fin.iterator(); i.hasNext();) {
-            ObjectXcle item = i.next();
-            System.out.println(item.getNama()+ " " + item.getTipe() + " " + item.getHarga());
+        for (ObjectXcle item : fin) {
+            System.out.println(item.getNama()+ "\n tipe: " + item.getTipe() + "\n harga: " + item.getHarga()+ "\n aksel: " + item.getAksel()+ "\n alamt: " +item.getAlamt()+ "\n bathfas " +item.getBathfas()+ "\n desket: " +item.getDesKet()+ "\n deskos " +item.getDesKos()+ "\n id: " +item.getId());
         }
     }
-    
 }

@@ -30,7 +30,7 @@ public class filter2Obj {
       XSSFWorkbook workbook = new XSSFWorkbook(xcleFile);
       XSSFSheet spreadsheet = workbook.getSheetAt(0); //Read sheet pertama
       Iterator < Row >  rowIterator = spreadsheet.iterator();
-//      rowIterator.next();
+      rowIterator.next();
       
       while (rowIterator.hasNext()){
           Row currentRow = rowIterator.next();
@@ -55,8 +55,9 @@ public class filter2Obj {
           Cell owner = currentRow.getCell(17);
           
           ObjectXcle str = new ObjectXcle();
-          str.setHarga(harga.getCellType());
+          str.setHarga((int) harga.getNumericCellValue());
           str.setKecamatan(kecam.getStringCellValue());
+          
           if (str.getHarga()>=min && str.getHarga()<=max && str.getKecamatan().equals(kec)){
               str.setUniversity(univ.getStringCellValue());
               str.setAksel(akSel.getStringCellValue());
@@ -86,7 +87,7 @@ public class filter2Obj {
       XSSFWorkbook workbook = new XSSFWorkbook(xcleFile);
       XSSFSheet spreadsheet = workbook.getSheetAt(0); //Read sheet pertama
       Iterator < Row >  rowIterator = spreadsheet.iterator();
-//      rowIterator.next();
+      rowIterator.next();
       
       while (rowIterator.hasNext()){
           Row currentRow = rowIterator.next();
@@ -111,7 +112,7 @@ public class filter2Obj {
           Cell owner = currentRow.getCell(17);
           
           ObjectXcle str = new ObjectXcle();
-          str.setHarga(harga.getCellType());
+          str.setHarga((int) harga.getNumericCellValue());
           str.setTipe(type.getStringCellValue());
           
           if (str.getHarga()>=min && str.getHarga()<=max && str.getTipe().equals(tipe)){
@@ -143,7 +144,7 @@ public class filter2Obj {
       XSSFWorkbook workbook = new XSSFWorkbook(xcleFile);
       XSSFSheet spreadsheet = workbook.getSheetAt(0); //Read sheet pertama
       Iterator < Row >  rowIterator = spreadsheet.iterator();
-//      rowIterator.next();
+      rowIterator.next();
       
       while (rowIterator.hasNext()){
           Row currentRow = rowIterator.next();
@@ -173,7 +174,7 @@ public class filter2Obj {
           
           if (str.getKecamatan().equals(kec) && str.getTipe().equals(tipe)){
               str.setUniversity(univ.getStringCellValue());
-              str.setHarga(harga.getCellType());
+              str.setHarga((int) harga.getNumericCellValue());
               str.setAksel(akSel.getStringCellValue());
               str.setAlamat(alamat.getStringCellValue());
               str.setBathfas(bathFas.getStringCellValue());

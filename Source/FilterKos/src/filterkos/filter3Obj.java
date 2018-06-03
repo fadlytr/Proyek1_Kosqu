@@ -55,7 +55,7 @@ public class filter3Obj {
           Cell owner = currentRow.getCell(17);
           
           ObjectXcle str = new ObjectXcle();
-          str.setHarga(harga.getCellType());
+          str.setHarga((int)harga.getNumericCellValue());
           str.setKecamatan(kecam.getStringCellValue());
           str.setTipe(type.getStringCellValue());
           if (str.getHarga()>=min && str.getHarga()<=max && str.getKecamatan().equals(kec) && str.getTipe().equals(tipe)){
