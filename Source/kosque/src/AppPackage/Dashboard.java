@@ -66,6 +66,20 @@ public class Dashboard extends javax.swing.JFrame {
         jRadioButton6 = new javax.swing.JRadioButton();
         jRadioButton7 = new javax.swing.JRadioButton();
         jRadioButton8 = new javax.swing.JRadioButton();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jRadioButton9 = new javax.swing.JRadioButton();
+        jRadioButton10 = new javax.swing.JRadioButton();
+        jRadioButton11 = new javax.swing.JRadioButton();
+        jRadioButton12 = new javax.swing.JRadioButton();
+        jRadioButton13 = new javax.swing.JRadioButton();
+        jRadioButton14 = new javax.swing.JRadioButton();
+        jRadioButton15 = new javax.swing.JRadioButton();
+        jRadioButton16 = new javax.swing.JRadioButton();
+        jRadioButton17 = new javax.swing.JRadioButton();
+        jRadioButton18 = new javax.swing.JRadioButton();
+        jRadioButton19 = new javax.swing.JRadioButton();
+        jRadioButton20 = new javax.swing.JRadioButton();
         PanelStatistic = new javax.swing.JPanel();
         iconAbout1 = new javax.swing.JLabel();
         about1 = new javax.swing.JLabel();
@@ -85,10 +99,8 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jPanel4 = new javax.swing.JPanel();
-        basedOn3 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jPanel6 = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jPanel9 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(1119, 685));
@@ -205,7 +217,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(jRadioButton2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jRadioButton3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(8, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 310, 140));
@@ -275,6 +287,102 @@ public class Dashboard extends javax.swing.JFrame {
         );
 
         jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 310, 170));
+
+        jPanel8.setBackground(new java.awt.Color(140, 158, 243));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Kecamatan");
+
+        jRadioButton9.setText("Andir");
+
+        jRadioButton10.setText("Antapani");
+
+        jRadioButton11.setText("Arcamanik");
+
+        jRadioButton12.setText("Bandung Kidul");
+
+        jRadioButton13.setText("Bandung Kulon");
+
+        jRadioButton14.setText("Batununggal");
+
+        jRadioButton15.setText("Buah Batu");
+
+        jRadioButton16.setText("Cibeuning Kaler");
+
+        jRadioButton17.setText("Cibeunying Kidul");
+
+        jRadioButton18.setText("Cibiru");
+
+        jRadioButton19.setText("Cimenyan");
+
+        jRadioButton20.setText("Coblong");
+        jRadioButton20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton20ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jRadioButton19)
+                            .addComponent(jRadioButton17)
+                            .addComponent(jRadioButton16)
+                            .addComponent(jRadioButton15)
+                            .addComponent(jLabel6)
+                            .addComponent(jRadioButton10)
+                            .addComponent(jRadioButton11)
+                            .addComponent(jRadioButton12)
+                            .addComponent(jRadioButton13)
+                            .addComponent(jRadioButton14)
+                            .addComponent(jRadioButton18))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(jRadioButton9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
+                        .addComponent(jRadioButton20)
+                        .addGap(81, 81, 81))))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jRadioButton9)
+                    .addComponent(jRadioButton20))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButton10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButton11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButton12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButton13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButton14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButton15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButton16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButton17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButton18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButton19)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 310, 250));
 
         jScrollPane4.setViewportView(jPanel1);
 
@@ -392,7 +500,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         BG.add(sidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 683));
 
-        jPanel2.setBackground(new java.awt.Color(0, 0, 204));
+        jPanel2.setBackground(new java.awt.Color(0, 51, 102));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         basedOn.setBackground(new java.awt.Color(204, 255, 255));
@@ -447,31 +555,10 @@ public class Dashboard extends javax.swing.JFrame {
 
         jPanel2.add(basedOn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 374, -1, -1));
 
-        basedOn3.setBackground(new java.awt.Color(204, 255, 255));
-        basedOn3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel9.setLayout(new java.awt.GridLayout());
+        jScrollPane6.setViewportView(jPanel9);
 
-        jLabel4.setBackground(new java.awt.Color(102, 204, 255));
-        jLabel4.setText("jLabel1");
-        basedOn3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 30));
-
-        jScrollPane5.setBackground(new java.awt.Color(204, 255, 255));
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1166, Short.MAX_VALUE)
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 161, Short.MAX_VALUE)
-        );
-
-        jScrollPane5.setViewportView(jPanel6);
-
-        basedOn3.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 640, 180));
-
-        jPanel2.add(basedOn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 674, -1, -1));
+        jPanel2.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 650, 660, 510));
 
         jScrollPane1.setViewportView(jPanel2);
 
@@ -509,10 +596,10 @@ public class Dashboard extends javax.swing.JFrame {
         else{
             resetColor(PanelFilter);
             PanelFilter.setSize(330, 60);
-            PanelBookmark.setLocation(0, 110);
-            PanelSetting.setLocation(0, 170);
-            PanelStatistic.setLocation(0, 230);
-            PanelLogout.setLocation(0, 290);
+            PanelBookmark.setLocation(0, 170);
+            PanelSetting.setLocation(0, 230);
+            PanelStatistic.setLocation(0, 290);
+            PanelLogout.setLocation(0, 350);
         }
         
         
@@ -525,6 +612,11 @@ public class Dashboard extends javax.swing.JFrame {
         resetColor(PanelSetting);
         resetColor(PanelLogout);
         resetColor(PanelBookmark);
+        PanelFilter.setSize(330, 60);
+            PanelBookmark.setLocation(0, 170);
+            PanelSetting.setLocation(0, 230);
+            PanelStatistic.setLocation(0, 290);
+            PanelLogout.setLocation(0, 350);
     }//GEN-LAST:event_PanelStatisticMousePressed
 
     private void PanelSettingMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelSettingMousePressed
@@ -535,6 +627,11 @@ public class Dashboard extends javax.swing.JFrame {
         resetColor(PanelBookmark);
         resetColor(PanelFilter);
         resetColor(PanelStatistic);
+        PanelFilter.setSize(330, 60);
+            PanelBookmark.setLocation(0, 170);
+            PanelSetting.setLocation(0, 230);
+            PanelStatistic.setLocation(0, 290);
+            PanelLogout.setLocation(0, 350);
     }//GEN-LAST:event_PanelSettingMousePressed
 
     private void PanelBookmarkMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelBookmarkMousePressed
@@ -544,17 +641,32 @@ public class Dashboard extends javax.swing.JFrame {
         resetColor(PanelSetting);
         resetColor(PanelLogout);
         resetColor(PanelStatistic);
+        PanelFilter.setSize(330, 60);
+            PanelBookmark.setLocation(0, 170);
+            PanelSetting.setLocation(0, 230);
+            PanelStatistic.setLocation(0, 290);
+            PanelLogout.setLocation(0, 350);
     }//GEN-LAST:event_PanelBookmarkMousePressed
 
     private void PanelLogoutMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelLogoutMousePressed
         // TODO add your handling code here:
+        PanelFilter.setSize(330, 60);
+            PanelBookmark.setLocation(0, 170);
+            PanelSetting.setLocation(0, 230);
+            PanelStatistic.setLocation(0, 290);
+            PanelLogout.setLocation(0, 350);
         this.dispose();
         new StartGUI().setVisible(true);
+        
     }//GEN-LAST:event_PanelLogoutMousePressed
 
     private void jRadioButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton6ActionPerformed
+
+    private void jRadioButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton20ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton20ActionPerformed
 
     //@author Imanda_Syahrul_Ramadhan
     
@@ -614,7 +726,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel about1;
     private javax.swing.JPanel basedOn;
     private javax.swing.JPanel basedOn1;
-    private javax.swing.JPanel basedOn3;
     private javax.swing.JLabel iconAbout;
     private javax.swing.JLabel iconAbout1;
     private javax.swing.JLabel iconLabel1;
@@ -623,28 +734,41 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton10;
+    private javax.swing.JRadioButton jRadioButton11;
+    private javax.swing.JRadioButton jRadioButton12;
+    private javax.swing.JRadioButton jRadioButton13;
+    private javax.swing.JRadioButton jRadioButton14;
+    private javax.swing.JRadioButton jRadioButton15;
+    private javax.swing.JRadioButton jRadioButton16;
+    private javax.swing.JRadioButton jRadioButton17;
+    private javax.swing.JRadioButton jRadioButton18;
+    private javax.swing.JRadioButton jRadioButton19;
     private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton20;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JRadioButton jRadioButton7;
     private javax.swing.JRadioButton jRadioButton8;
+    private javax.swing.JRadioButton jRadioButton9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JLabel judulApp;
     private javax.swing.JPanel sidePanel;
     // End of variables declaration//GEN-END:variables
