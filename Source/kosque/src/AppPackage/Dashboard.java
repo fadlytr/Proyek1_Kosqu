@@ -6,6 +6,7 @@
 package AppPackage;
 
 import java.awt.Color;
+import javax.swing.ButtonGroup;
 import javax.swing.JPanel;
 
 /**
@@ -19,6 +20,18 @@ public class Dashboard extends javax.swing.JFrame {
      */
     public Dashboard() {
         initComponents();
+        
+        ButtonGroup TipeKost = new ButtonGroup();
+        TipeKost.add(jRadioButton1);
+        TipeKost.add(jRadioButton2);
+        TipeKost.add(jRadioButton3);
+        
+        ButtonGroup RangeHarga = new ButtonGroup();
+        RangeHarga.add(jRadioButton4);
+        RangeHarga.add(jRadioButton5);
+        RangeHarga.add(jRadioButton6);
+        RangeHarga.add(jRadioButton7);
+        RangeHarga.add(jRadioButton8);
     }
 
     /**
@@ -32,7 +45,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         BG = new javax.swing.JPanel();
         sidePanel = new javax.swing.JPanel();
-        PanelLogout1 = new javax.swing.JPanel();
+        PanelLogout = new javax.swing.JPanel();
         iconLogout1 = new javax.swing.JLabel();
         Logout1 = new javax.swing.JLabel();
         judulApp = new javax.swing.JLabel();
@@ -41,6 +54,18 @@ public class Dashboard extends javax.swing.JFrame {
         Loggin1 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jRadioButton4 = new javax.swing.JRadioButton();
+        jRadioButton5 = new javax.swing.JRadioButton();
+        jRadioButton6 = new javax.swing.JRadioButton();
+        jRadioButton7 = new javax.swing.JRadioButton();
+        jRadioButton8 = new javax.swing.JRadioButton();
         PanelStatistic = new javax.swing.JPanel();
         iconAbout1 = new javax.swing.JLabel();
         about1 = new javax.swing.JLabel();
@@ -70,13 +95,13 @@ public class Dashboard extends javax.swing.JFrame {
 
         BG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        sidePanel.setBackground(new java.awt.Color(255, 255, 255));
+        sidePanel.setBackground(new java.awt.Color(165, 178, 243));
         sidePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        PanelLogout1.setBackground(new java.awt.Color(165, 178, 243));
-        PanelLogout1.addMouseListener(new java.awt.event.MouseAdapter() {
+        PanelLogout.setBackground(new java.awt.Color(165, 178, 243));
+        PanelLogout.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                PanelLogout1MousePressed(evt);
+                PanelLogoutMousePressed(evt);
             }
         });
 
@@ -87,31 +112,31 @@ public class Dashboard extends javax.swing.JFrame {
         Logout1.setForeground(new java.awt.Color(255, 255, 255));
         Logout1.setText("Sign Out");
 
-        javax.swing.GroupLayout PanelLogout1Layout = new javax.swing.GroupLayout(PanelLogout1);
-        PanelLogout1.setLayout(PanelLogout1Layout);
-        PanelLogout1Layout.setHorizontalGroup(
-            PanelLogout1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelLogout1Layout.createSequentialGroup()
+        javax.swing.GroupLayout PanelLogoutLayout = new javax.swing.GroupLayout(PanelLogout);
+        PanelLogout.setLayout(PanelLogoutLayout);
+        PanelLogoutLayout.setHorizontalGroup(
+            PanelLogoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelLogoutLayout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addComponent(iconLogout1)
                 .addGap(6, 6, 6)
                 .addComponent(Logout1))
         );
-        PanelLogout1Layout.setVerticalGroup(
-            PanelLogout1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelLogout1Layout.createSequentialGroup()
+        PanelLogoutLayout.setVerticalGroup(
+            PanelLogoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelLogoutLayout.createSequentialGroup()
                 .addGap(11, 11, 11)
                 .addComponent(iconLogout1))
-            .addGroup(PanelLogout1Layout.createSequentialGroup()
+            .addGroup(PanelLogoutLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(Logout1))
         );
 
-        sidePanel.add(PanelLogout1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 590, 330, 60));
+        sidePanel.add(PanelLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 330, 60));
 
         judulApp.setBackground(new java.awt.Color(0, 51, 102));
         judulApp.setFont(new java.awt.Font("Arial Black", 1, 48)); // NOI18N
-        judulApp.setForeground(new java.awt.Color(0, 51, 102));
+        judulApp.setForeground(new java.awt.Color(255, 255, 255));
         judulApp.setText("KosQu");
         sidePanel.add(judulApp, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
@@ -121,56 +146,141 @@ public class Dashboard extends javax.swing.JFrame {
                 PanelFilterMousePressed(evt);
             }
         });
+        PanelFilter.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         iconLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/data/icons/icons8_Filter_32px.png"))); // NOI18N
         iconLabel1.setToolTipText("");
+        PanelFilter.add(iconLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
 
         Loggin1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         Loggin1.setForeground(new java.awt.Color(255, 255, 255));
         Loggin1.setText("Filter");
+        PanelFilter.add(Loggin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 14, -1, -1));
 
-        jPanel1.setBackground(new java.awt.Color(165, 178, 243));
+        jPanel1.setBackground(new java.awt.Color(140, 158, 243));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 328, Short.MAX_VALUE)
+        jPanel5.setBackground(new java.awt.Color(140, 158, 243));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Tipe");
+
+        jRadioButton1.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton1.setText("Pria");
+
+        jRadioButton2.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jRadioButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton2.setText("Wanita");
+
+        jRadioButton3.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jRadioButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton3.setText("Campuran");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jRadioButton1)
+                    .addComponent(jLabel3)
+                    .addComponent(jRadioButton2)
+                    .addComponent(jRadioButton3))
+                .addContainerGap(211, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 441, Short.MAX_VALUE)
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addComponent(jRadioButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jRadioButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jRadioButton3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 310, 140));
+
+        jPanel7.setBackground(new java.awt.Color(140, 158, 243));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Range Harga");
+
+        jRadioButton4.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton4.setText(">500.000");
+
+        jRadioButton5.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton5.setText("500.000 - 750.000");
+
+        jRadioButton6.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton6.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton6.setText("750.000 - 1.000.000");
+        jRadioButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton6ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton7.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton7.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton7.setText("1.000.000 - 1.500.000");
+
+        jRadioButton8.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton8.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton8.setText(">1.500.000");
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jRadioButton8)
+                    .addComponent(jRadioButton7)
+                    .addComponent(jRadioButton6)
+                    .addComponent(jRadioButton5)
+                    .addComponent(jLabel5)
+                    .addComponent(jRadioButton4))
+                .addContainerGap(165, Short.MAX_VALUE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jRadioButton4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButton5)
+                .addGap(3, 3, 3)
+                .addComponent(jRadioButton6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButton7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButton8)
+                .addContainerGap(12, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 310, 170));
 
         jScrollPane4.setViewportView(jPanel1);
 
-        javax.swing.GroupLayout PanelFilterLayout = new javax.swing.GroupLayout(PanelFilter);
-        PanelFilter.setLayout(PanelFilterLayout);
-        PanelFilterLayout.setHorizontalGroup(
-            PanelFilterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelFilterLayout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(iconLabel1)
-                .addGap(6, 6, 6)
-                .addComponent(Loggin1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jScrollPane4)
-        );
-        PanelFilterLayout.setVerticalGroup(
-            PanelFilterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelFilterLayout.createSequentialGroup()
-                .addGroup(PanelFilterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelFilterLayout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(iconLabel1))
-                    .addGroup(PanelFilterLayout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(Loggin1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane4))
-        );
+        PanelFilter.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 61, 330, 239));
 
-        sidePanel.add(PanelFilter, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 330, 300));
+        sidePanel.add(PanelFilter, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 330, 60));
 
         PanelStatistic.setBackground(new java.awt.Color(165, 178, 243));
         PanelStatistic.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -206,7 +316,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(about1))
         );
 
-        sidePanel.add(PanelStatistic, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 330, 60));
+        sidePanel.add(PanelStatistic, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 330, 60));
 
         PanelBookmark.setBackground(new java.awt.Color(165, 178, 243));
         PanelBookmark.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -242,7 +352,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(Logout))
         );
 
-        sidePanel.add(PanelBookmark, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 330, 60));
+        sidePanel.add(PanelBookmark, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 330, 60));
 
         PanelSetting.setBackground(new java.awt.Color(165, 178, 243));
         PanelSetting.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -278,7 +388,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(about))
         );
 
-        sidePanel.add(PanelSetting, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 530, 330, 60));
+        sidePanel.add(PanelSetting, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 330, 60));
 
         BG.add(sidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 683));
 
@@ -384,10 +494,28 @@ public class Dashboard extends javax.swing.JFrame {
     private void PanelFilterMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelFilterMousePressed
         //@author Imanda_Syahrul_Ramadhan
         // TODO add your handling code here:
-        setColor(PanelFilter);
+        if(PanelFilter.getBackground().equals(new Color(165,178,243))){
+            setColor(PanelFilter);
+            resetColor(PanelSetting);
+            resetColor(PanelBookmark);
+            resetColor(PanelStatistic);
+            resetColor(PanelLogout);
+            PanelFilter.setSize(330, 300);
+            PanelBookmark.setLocation(0, 410);
+            PanelSetting.setLocation(0, 530);
+            PanelStatistic.setLocation(0, 470);
+            PanelLogout.setLocation(0, 590);
+        }
+        else{
+            resetColor(PanelFilter);
+            PanelFilter.setSize(330, 60);
+            PanelBookmark.setLocation(0, 110);
+            PanelSetting.setLocation(0, 170);
+            PanelStatistic.setLocation(0, 230);
+            PanelLogout.setLocation(0, 290);
+        }
         
-        resetColor(PanelSetting);
-        resetColor(PanelStatistic);
+        
     }//GEN-LAST:event_PanelFilterMousePressed
 
     private void PanelStatisticMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelStatisticMousePressed
@@ -395,27 +523,38 @@ public class Dashboard extends javax.swing.JFrame {
         setColor(PanelStatistic);
         resetColor(PanelFilter);
         resetColor(PanelSetting);
-        
+        resetColor(PanelLogout);
+        resetColor(PanelBookmark);
     }//GEN-LAST:event_PanelStatisticMousePressed
 
     private void PanelSettingMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelSettingMousePressed
         //@author Imanda_Syahrul_Ramadhan
         // TODO add your handling code here:
         setColor(PanelSetting);
-        
+        resetColor(PanelLogout);
+        resetColor(PanelBookmark);
         resetColor(PanelFilter);
         resetColor(PanelStatistic);
     }//GEN-LAST:event_PanelSettingMousePressed
 
     private void PanelBookmarkMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelBookmarkMousePressed
         // TODO add your handling code here:
+        setColor(PanelBookmark);
+        resetColor(PanelFilter);
+        resetColor(PanelSetting);
+        resetColor(PanelLogout);
+        resetColor(PanelStatistic);
     }//GEN-LAST:event_PanelBookmarkMousePressed
 
-    private void PanelLogout1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelLogout1MousePressed
+    private void PanelLogoutMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelLogoutMousePressed
         // TODO add your handling code here:
         this.dispose();
         new StartGUI().setVisible(true);
-    }//GEN-LAST:event_PanelLogout1MousePressed
+    }//GEN-LAST:event_PanelLogoutMousePressed
+
+    private void jRadioButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton6ActionPerformed
 
     //@author Imanda_Syahrul_Ramadhan
     
@@ -468,7 +607,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel Logout1;
     private javax.swing.JPanel PanelBookmark;
     private javax.swing.JPanel PanelFilter;
-    private javax.swing.JPanel PanelLogout1;
+    private javax.swing.JPanel PanelLogout;
     private javax.swing.JPanel PanelSetting;
     private javax.swing.JPanel PanelStatistic;
     private javax.swing.JLabel about;
@@ -483,12 +622,24 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel iconLogout1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton jRadioButton5;
+    private javax.swing.JRadioButton jRadioButton6;
+    private javax.swing.JRadioButton jRadioButton7;
+    private javax.swing.JRadioButton jRadioButton8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
