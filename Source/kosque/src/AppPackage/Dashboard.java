@@ -780,7 +780,7 @@ public class Dashboard extends javax.swing.JFrame {
         basedOn.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(102, 204, 255));
-        jLabel1.setText("Based On");
+        jLabel1.setText("Based On \"Kecamatan\"");
         basedOn.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 30));
 
         jScrollPane2.setBackground(new java.awt.Color(204, 255, 255));
@@ -806,7 +806,7 @@ public class Dashboard extends javax.swing.JFrame {
         basedOn1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setBackground(new java.awt.Color(102, 204, 255));
-        jLabel2.setText("Based On");
+        jLabel2.setText("Based On \"Kampus\"");
         basedOn1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 30));
 
         jScrollPane3.setBackground(new java.awt.Color(204, 255, 255));
@@ -1125,7 +1125,7 @@ public class Dashboard extends javax.swing.JFrame {
         }else if (selectHarga && selectTipe){
             hasil = fil2.filterHargTipe(hargaMaximal,hargaMinimal,tipe);
         }else if (selectHarga && selectTipe && selectHarga){
-            hasil = fil3.filter3Object(hargaMaximal, hargaMinimal, kecamatan, tipe)
+            hasil = fil3.filter3Object(hargaMaximal, hargaMinimal, kecamatan, tipe);
         }
     }//GEN-LAST:event_FilterButtonMousePressed
 
