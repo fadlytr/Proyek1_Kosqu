@@ -7,6 +7,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -133,7 +134,7 @@ public class BarChart extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
-     public static int countKecamatanstatic (String kec) {
+     public static int countKecamatanstatic (String kec) throws FileNotFoundException, IOException {
       FileInputStream xcleFile = new FileInputStream(new File("src\\Object\\data_terbaru.xlsx"));
       String kecamatan;
       
