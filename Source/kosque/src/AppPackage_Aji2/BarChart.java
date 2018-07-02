@@ -133,6 +133,29 @@ public class BarChart extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
+     public static int countKecamatanstatic (String kec) {
+      FileInputStream xcleFile = new FileInputStream(new File("src\\Object\\data_terbaru.xlsx"));
+      String kecamatan;
+      
+      XSSFWorkbook workbook = new XSSFWorkbook(xcleFile);
+      XSSFSheet spreadsheet = workbook.getSheetAt(0); //Read sheet pertama
+      Iterator < Row >  rowIterator = spreadsheet.iterator();
+      rowIterator.next();
+      
+      while (rowIterator.hasNext()){
+          Row currentRow = rowIterator.next();
+          
+          Cell kecam = currentRow.getCell(17);
+          
+          kecamatan=kecam.getStringCellValue();
+          if (str){
+               jumlah +=1;
+          }
+      }
+        
+      return jumlah;
+}
+
     // Bar Chart
     public static JPanel createBarChartPanel1(){
         DefaultCategoryDataset barDataset = new DefaultCategoryDataset();
