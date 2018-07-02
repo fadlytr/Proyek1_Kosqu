@@ -3,9 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package AppPackage2;
+package AppPackage;
 
+import AppPackage2.BarChart;
 import java.awt.Color;
+import java.awt.List;
+import java.util.ArrayList;
+import javax.swing.ButtonGroup;
 import javax.swing.JPanel;
 
 /**
@@ -14,11 +18,26 @@ import javax.swing.JPanel;
  */
 public class Dashboard extends javax.swing.JFrame {
 
+    boolean selectTipe,selectKecamatan,selectHarga;
+    String tipe, kecamatan;
+    int hargaMaximal,hargaMinimal;
     /**
      * Creates new form Dashboard
      */
     public Dashboard() {
         initComponents();
+        
+        ButtonGroup TipeKost = new ButtonGroup();
+        TipeKost.add(jRadioButton1);
+        TipeKost.add(jRadioButton2);
+        TipeKost.add(jRadioButton3);
+        
+        ButtonGroup RangeHarga = new ButtonGroup();
+        RangeHarga.add(jRadioButton4);
+        RangeHarga.add(jRadioButton5);
+        RangeHarga.add(jRadioButton6);
+        RangeHarga.add(jRadioButton7);
+        RangeHarga.add(jRadioButton8);
     }
 
     /**
@@ -32,13 +51,52 @@ public class Dashboard extends javax.swing.JFrame {
 
         BG = new javax.swing.JPanel();
         sidePanel = new javax.swing.JPanel();
-        PanelLogout1 = new javax.swing.JPanel();
+        PanelLogout = new javax.swing.JPanel();
         iconLogout1 = new javax.swing.JLabel();
         Logout1 = new javax.swing.JLabel();
         judulApp = new javax.swing.JLabel();
         PanelFilter = new javax.swing.JPanel();
         iconLabel1 = new javax.swing.JLabel();
         Loggin1 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jPanel1 = new javax.swing.JPanel();
+        TipeKost = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        RangeHargaPanel = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jRadioButton4 = new javax.swing.JRadioButton();
+        jRadioButton5 = new javax.swing.JRadioButton();
+        jRadioButton6 = new javax.swing.JRadioButton();
+        jRadioButton7 = new javax.swing.JRadioButton();
+        jRadioButton8 = new javax.swing.JRadioButton();
+        KecamatanPanel = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jRadioButton9 = new javax.swing.JRadioButton();
+        jRadioButton10 = new javax.swing.JRadioButton();
+        jRadioButton11 = new javax.swing.JRadioButton();
+        jRadioButton12 = new javax.swing.JRadioButton();
+        jRadioButton13 = new javax.swing.JRadioButton();
+        jRadioButton14 = new javax.swing.JRadioButton();
+        jRadioButton15 = new javax.swing.JRadioButton();
+        jRadioButton16 = new javax.swing.JRadioButton();
+        jRadioButton17 = new javax.swing.JRadioButton();
+        jRadioButton18 = new javax.swing.JRadioButton();
+        jRadioButton19 = new javax.swing.JRadioButton();
+        jRadioButton20 = new javax.swing.JRadioButton();
+        jRadioButton21 = new javax.swing.JRadioButton();
+        jRadioButton22 = new javax.swing.JRadioButton();
+        jRadioButton23 = new javax.swing.JRadioButton();
+        jRadioButton24 = new javax.swing.JRadioButton();
+        jRadioButton25 = new javax.swing.JRadioButton();
+        jRadioButton26 = new javax.swing.JRadioButton();
+        jRadioButton27 = new javax.swing.JRadioButton();
+        jRadioButton28 = new javax.swing.JRadioButton();
+        jRadioButton29 = new javax.swing.JRadioButton();
+        FilterButton = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
         PanelStatistic = new javax.swing.JPanel();
         iconAbout1 = new javax.swing.JLabel();
         about1 = new javax.swing.JLabel();
@@ -58,23 +116,21 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jPanel4 = new javax.swing.JPanel();
-        basedOn3 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jPanel6 = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jPanel9 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(1119, 685));
 
         BG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        sidePanel.setBackground(new java.awt.Color(255, 255, 255));
+        sidePanel.setBackground(new java.awt.Color(165, 178, 243));
         sidePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        PanelLogout1.setBackground(new java.awt.Color(165, 178, 243));
-        PanelLogout1.addMouseListener(new java.awt.event.MouseAdapter() {
+        PanelLogout.setBackground(new java.awt.Color(165, 178, 243));
+        PanelLogout.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                PanelLogout1MousePressed(evt);
+                PanelLogoutMousePressed(evt);
             }
         });
 
@@ -85,31 +141,31 @@ public class Dashboard extends javax.swing.JFrame {
         Logout1.setForeground(new java.awt.Color(255, 255, 255));
         Logout1.setText("Sign Out");
 
-        javax.swing.GroupLayout PanelLogout1Layout = new javax.swing.GroupLayout(PanelLogout1);
-        PanelLogout1.setLayout(PanelLogout1Layout);
-        PanelLogout1Layout.setHorizontalGroup(
-            PanelLogout1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelLogout1Layout.createSequentialGroup()
+        javax.swing.GroupLayout PanelLogoutLayout = new javax.swing.GroupLayout(PanelLogout);
+        PanelLogout.setLayout(PanelLogoutLayout);
+        PanelLogoutLayout.setHorizontalGroup(
+            PanelLogoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelLogoutLayout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addComponent(iconLogout1)
                 .addGap(6, 6, 6)
                 .addComponent(Logout1))
         );
-        PanelLogout1Layout.setVerticalGroup(
-            PanelLogout1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelLogout1Layout.createSequentialGroup()
+        PanelLogoutLayout.setVerticalGroup(
+            PanelLogoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelLogoutLayout.createSequentialGroup()
                 .addGap(11, 11, 11)
                 .addComponent(iconLogout1))
-            .addGroup(PanelLogout1Layout.createSequentialGroup()
+            .addGroup(PanelLogoutLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(Logout1))
         );
 
-        sidePanel.add(PanelLogout1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 330, 60));
+        sidePanel.add(PanelLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 330, 60));
 
         judulApp.setBackground(new java.awt.Color(0, 51, 102));
         judulApp.setFont(new java.awt.Font("Arial Black", 1, 48)); // NOI18N
-        judulApp.setForeground(new java.awt.Color(0, 51, 102));
+        judulApp.setForeground(new java.awt.Color(255, 255, 255));
         judulApp.setText("KosQu");
         sidePanel.add(judulApp, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
@@ -119,33 +175,492 @@ public class Dashboard extends javax.swing.JFrame {
                 PanelFilterMousePressed(evt);
             }
         });
+        PanelFilter.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         iconLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/data/icons/icons8_Filter_32px.png"))); // NOI18N
         iconLabel1.setToolTipText("");
+        PanelFilter.add(iconLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
 
         Loggin1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         Loggin1.setForeground(new java.awt.Color(255, 255, 255));
         Loggin1.setText("Filter");
+        PanelFilter.add(Loggin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 14, -1, -1));
 
-        javax.swing.GroupLayout PanelFilterLayout = new javax.swing.GroupLayout(PanelFilter);
-        PanelFilter.setLayout(PanelFilterLayout);
-        PanelFilterLayout.setHorizontalGroup(
-            PanelFilterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelFilterLayout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(iconLabel1)
-                .addGap(6, 6, 6)
-                .addComponent(Loggin1))
+        jPanel1.setBackground(new java.awt.Color(140, 158, 243));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        TipeKost.setBackground(new java.awt.Color(140, 158, 243));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Tipe");
+
+        jRadioButton1.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton1.setText("Pria");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton2.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jRadioButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton2.setText("Wanita");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton3.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jRadioButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton3.setText("Campuran");
+        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton3ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout TipeKostLayout = new javax.swing.GroupLayout(TipeKost);
+        TipeKost.setLayout(TipeKostLayout);
+        TipeKostLayout.setHorizontalGroup(
+            TipeKostLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TipeKostLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(TipeKostLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jRadioButton1)
+                    .addComponent(jLabel3)
+                    .addComponent(jRadioButton2)
+                    .addComponent(jRadioButton3))
+                .addContainerGap(211, Short.MAX_VALUE))
         );
-        PanelFilterLayout.setVerticalGroup(
-            PanelFilterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelFilterLayout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addComponent(iconLabel1))
-            .addGroup(PanelFilterLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(Loggin1))
+        TipeKostLayout.setVerticalGroup(
+            TipeKostLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TipeKostLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addComponent(jRadioButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jRadioButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jRadioButton3)
+                .addContainerGap(8, Short.MAX_VALUE))
         );
+
+        jPanel1.add(TipeKost, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 310, 140));
+
+        RangeHargaPanel.setBackground(new java.awt.Color(140, 158, 243));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Range Harga");
+
+        jRadioButton4.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton4.setText("<500.000");
+        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton4ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton5.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton5.setText("500.000 - 750.000");
+        jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton5ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton6.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton6.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton6.setText("750.000 - 1.000.000");
+        jRadioButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton6ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton7.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton7.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton7.setText("1.000.000 - 1.500.000");
+        jRadioButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton7ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton8.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton8.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton8.setText(">1.500.000");
+        jRadioButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton8ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout RangeHargaPanelLayout = new javax.swing.GroupLayout(RangeHargaPanel);
+        RangeHargaPanel.setLayout(RangeHargaPanelLayout);
+        RangeHargaPanelLayout.setHorizontalGroup(
+            RangeHargaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RangeHargaPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(RangeHargaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jRadioButton8)
+                    .addComponent(jRadioButton7)
+                    .addComponent(jRadioButton6)
+                    .addComponent(jRadioButton5)
+                    .addComponent(jLabel5)
+                    .addComponent(jRadioButton4))
+                .addContainerGap(165, Short.MAX_VALUE))
+        );
+        RangeHargaPanelLayout.setVerticalGroup(
+            RangeHargaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RangeHargaPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jRadioButton4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButton5)
+                .addGap(3, 3, 3)
+                .addComponent(jRadioButton6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButton7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButton8)
+                .addContainerGap(12, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(RangeHargaPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 310, 170));
+
+        KecamatanPanel.setBackground(new java.awt.Color(140, 158, 243));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Kecamatan");
+
+        jRadioButton9.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton9.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton9.setText("Andir");
+        jRadioButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton9ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton10.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton10.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton10.setText("Antapani");
+        jRadioButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton10ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton11.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton11.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton11.setText("Arcamanik");
+        jRadioButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton11ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton12.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton12.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton12.setText("Bandung Kidul");
+        jRadioButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton12ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton13.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton13.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton13.setText("Bandung Kulon");
+        jRadioButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton13ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton14.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton14.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton14.setText("Batununggal");
+        jRadioButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton14ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton15.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton15.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton15.setText("Buah Batu");
+        jRadioButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton15ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton16.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton16.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton16.setText("Cibeunying Kaler");
+        jRadioButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton16ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton17.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton17.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton17.setText("Cibeunying Kidul");
+        jRadioButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton17ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton18.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton18.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton18.setText("Cibiru");
+        jRadioButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton18ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton19.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton19.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton19.setText("Cimenyan");
+        jRadioButton19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton19ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton20.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton20.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton20.setText("Coblong");
+        jRadioButton20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton20ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton21.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton21.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton21.setText("Dayeuhkolot");
+        jRadioButton21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton21ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton22.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton22.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton22.setText("Gedebage");
+        jRadioButton22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton22ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton23.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton23.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton23.setText("Kiaracondong");
+        jRadioButton23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton23ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton24.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton24.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton24.setText("Lengkong");
+        jRadioButton24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton24ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton25.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton25.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton25.setText("Panyileukan");
+        jRadioButton25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton25ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton26.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton26.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton26.setText("Parongpong");
+        jRadioButton26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton26ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton27.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton27.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton27.setText("Regol");
+        jRadioButton27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton27ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton28.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton28.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton28.setText("Sukajadi");
+        jRadioButton28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton28ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton29.setBackground(new java.awt.Color(140, 158, 243));
+        jRadioButton29.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton29.setText("Ujungberung");
+        jRadioButton29.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton29ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout KecamatanPanelLayout = new javax.swing.GroupLayout(KecamatanPanel);
+        KecamatanPanel.setLayout(KecamatanPanelLayout);
+        KecamatanPanelLayout.setHorizontalGroup(
+            KecamatanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(KecamatanPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(KecamatanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, KecamatanPanelLayout.createSequentialGroup()
+                        .addComponent(jRadioButton9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
+                        .addComponent(jRadioButton20)
+                        .addGap(81, 81, 81))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, KecamatanPanelLayout.createSequentialGroup()
+                        .addComponent(jRadioButton10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jRadioButton21)
+                        .addGap(61, 61, 61))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, KecamatanPanelLayout.createSequentialGroup()
+                        .addComponent(jRadioButton11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jRadioButton22)
+                        .addGap(71, 71, 71))
+                    .addGroup(KecamatanPanelLayout.createSequentialGroup()
+                        .addGroup(KecamatanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jRadioButton19)
+                            .addComponent(jRadioButton17)
+                            .addComponent(jRadioButton16)
+                            .addComponent(jRadioButton15)
+                            .addComponent(jLabel6)
+                            .addComponent(jRadioButton12)
+                            .addComponent(jRadioButton13)
+                            .addComponent(jRadioButton14)
+                            .addComponent(jRadioButton18))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(KecamatanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jRadioButton23)
+                            .addComponent(jRadioButton24)
+                            .addComponent(jRadioButton25)
+                            .addComponent(jRadioButton26)
+                            .addComponent(jRadioButton27)
+                            .addComponent(jRadioButton28)
+                            .addComponent(jRadioButton29))
+                        .addGap(55, 55, 55))))
+        );
+        KecamatanPanelLayout.setVerticalGroup(
+            KecamatanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(KecamatanPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(KecamatanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jRadioButton9)
+                    .addComponent(jRadioButton20))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(KecamatanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jRadioButton10)
+                    .addComponent(jRadioButton21))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(KecamatanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jRadioButton11)
+                    .addComponent(jRadioButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(KecamatanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jRadioButton12)
+                    .addComponent(jRadioButton23))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(KecamatanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jRadioButton13)
+                    .addComponent(jRadioButton24))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(KecamatanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jRadioButton14)
+                    .addComponent(jRadioButton25))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(KecamatanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jRadioButton15)
+                    .addComponent(jRadioButton26))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(KecamatanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jRadioButton16)
+                    .addComponent(jRadioButton27))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(KecamatanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jRadioButton17)
+                    .addComponent(jRadioButton28))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(KecamatanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jRadioButton18)
+                    .addComponent(jRadioButton29))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButton19)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(KecamatanPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 310, 250));
+
+        FilterButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                FilterButtonMousePressed(evt);
+            }
+        });
+
+        jLabel4.setText("FILTER");
+
+        javax.swing.GroupLayout FilterButtonLayout = new javax.swing.GroupLayout(FilterButton);
+        FilterButton.setLayout(FilterButtonLayout);
+        FilterButtonLayout.setHorizontalGroup(
+            FilterButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FilterButtonLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel4)
+                .addContainerGap(37, Short.MAX_VALUE))
+        );
+        FilterButtonLayout.setVerticalGroup(
+            FilterButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FilterButtonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4)
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(FilterButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 650, 100, 40));
+
+        jScrollPane4.setViewportView(jPanel1);
+
+        PanelFilter.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 61, 330, 239));
 
         sidePanel.add(PanelFilter, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 330, 60));
 
@@ -259,14 +774,14 @@ public class Dashboard extends javax.swing.JFrame {
 
         BG.add(sidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 683));
 
-        jPanel2.setBackground(new java.awt.Color(0, 0, 204));
+        jPanel2.setBackground(new java.awt.Color(0, 51, 102));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         basedOn.setBackground(new java.awt.Color(204, 255, 255));
         basedOn.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(102, 204, 255));
-        jLabel1.setText("Based On");
+        jLabel1.setText("Based On \"Kecamatan\"");
         basedOn.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 30));
 
         jScrollPane2.setBackground(new java.awt.Color(204, 255, 255));
@@ -292,7 +807,7 @@ public class Dashboard extends javax.swing.JFrame {
         basedOn1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setBackground(new java.awt.Color(102, 204, 255));
-        jLabel2.setText("Based On");
+        jLabel2.setText("Based On \"Kampus\"");
         basedOn1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 30));
 
         jScrollPane3.setBackground(new java.awt.Color(204, 255, 255));
@@ -314,31 +829,10 @@ public class Dashboard extends javax.swing.JFrame {
 
         jPanel2.add(basedOn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 374, -1, -1));
 
-        basedOn3.setBackground(new java.awt.Color(204, 255, 255));
-        basedOn3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel9.setLayout(new java.awt.GridLayout(1, 0));
+        jScrollPane6.setViewportView(jPanel9);
 
-        jLabel4.setBackground(new java.awt.Color(102, 204, 255));
-        jLabel4.setText("jLabel1");
-        basedOn3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 30));
-
-        jScrollPane5.setBackground(new java.awt.Color(204, 255, 255));
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1166, Short.MAX_VALUE)
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 161, Short.MAX_VALUE)
-        );
-
-        jScrollPane5.setViewportView(jPanel6);
-
-        basedOn3.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 640, 180));
-
-        jPanel2.add(basedOn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 674, -1, -1));
+        jPanel2.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 650, 660, 510));
 
         jScrollPane1.setViewportView(jPanel2);
 
@@ -361,10 +855,28 @@ public class Dashboard extends javax.swing.JFrame {
     private void PanelFilterMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelFilterMousePressed
         //@author Imanda_Syahrul_Ramadhan
         // TODO add your handling code here:
-        setColor(PanelFilter);
+        if(PanelFilter.getBackground().equals(new Color(165,178,243))){
+            setColor(PanelFilter);
+            resetColor(PanelSetting);
+            resetColor(PanelBookmark);
+            resetColor(PanelStatistic);
+            resetColor(PanelLogout);
+            PanelFilter.setSize(330, 300);
+            PanelBookmark.setLocation(0, 410);
+            PanelSetting.setLocation(0, 530);
+            PanelStatistic.setLocation(0, 470);
+            PanelLogout.setLocation(0, 590);
+        }
+        else{
+            resetColor(PanelFilter);
+            PanelFilter.setSize(330, 60);
+            PanelBookmark.setLocation(0, 170);
+            PanelSetting.setLocation(0, 230);
+            PanelStatistic.setLocation(0, 290);
+            PanelLogout.setLocation(0, 350);
+        }
         
-        resetColor(PanelSetting);
-        resetColor(PanelStatistic);
+        
     }//GEN-LAST:event_PanelFilterMousePressed
 
     private void PanelStatisticMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelStatisticMousePressed
@@ -372,27 +884,253 @@ public class Dashboard extends javax.swing.JFrame {
         setColor(PanelStatistic);
         resetColor(PanelFilter);
         resetColor(PanelSetting);
-        
+        resetColor(PanelLogout);
+        resetColor(PanelBookmark);
+        PanelFilter.setSize(330, 60);
+            PanelBookmark.setLocation(0, 170);
+            PanelSetting.setLocation(0, 230);
+            PanelStatistic.setLocation(0, 290);
+            PanelLogout.setLocation(0, 350);
+            new BarChart().setVisible(true);
     }//GEN-LAST:event_PanelStatisticMousePressed
 
     private void PanelSettingMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelSettingMousePressed
         //@author Imanda_Syahrul_Ramadhan
         // TODO add your handling code here:
         setColor(PanelSetting);
-        
+        resetColor(PanelLogout);
+        resetColor(PanelBookmark);
         resetColor(PanelFilter);
         resetColor(PanelStatistic);
+        PanelFilter.setSize(330, 60);
+            PanelBookmark.setLocation(0, 170);
+            PanelSetting.setLocation(0, 230);
+            PanelStatistic.setLocation(0, 290);
+            PanelLogout.setLocation(0, 350);
     }//GEN-LAST:event_PanelSettingMousePressed
 
     private void PanelBookmarkMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelBookmarkMousePressed
         // TODO add your handling code here:
+        setColor(PanelBookmark);
+        resetColor(PanelFilter);
+        resetColor(PanelSetting);
+        resetColor(PanelLogout);
+        resetColor(PanelStatistic);
+        PanelFilter.setSize(330, 60);
+            PanelBookmark.setLocation(0, 170);
+            PanelSetting.setLocation(0, 230);
+            PanelStatistic.setLocation(0, 290);
+            PanelLogout.setLocation(0, 350);
+            new BookmarkGUI().setVisible(true);
     }//GEN-LAST:event_PanelBookmarkMousePressed
 
-    private void PanelLogout1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelLogout1MousePressed
+    private void PanelLogoutMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelLogoutMousePressed
         // TODO add your handling code here:
+        PanelFilter.setSize(330, 60);
+            PanelBookmark.setLocation(0, 170);
+            PanelSetting.setLocation(0, 230);
+            PanelStatistic.setLocation(0, 290);
+            PanelLogout.setLocation(0, 350);
         this.dispose();
         new StartGUI().setVisible(true);
-    }//GEN-LAST:event_PanelLogout1MousePressed
+        
+    }//GEN-LAST:event_PanelLogoutMousePressed
+
+    private void jRadioButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton6ActionPerformed
+        // TODO add your handling code here:
+        selectHarga = true;
+        hargaMaximal=999999;
+        hargaMinimal=750000;
+    }//GEN-LAST:event_jRadioButton6ActionPerformed
+
+    private void jRadioButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton20ActionPerformed
+        // TODO add your handling code here:
+        selectKecamatan = true;
+        kecamatan = "Coblong";
+    }//GEN-LAST:event_jRadioButton20ActionPerformed
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+        selectTipe=true;
+        tipe="Pria";
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        // TODO add your handling code here:
+        selectTipe=true;
+        tipe="Wanita";
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
+        // TODO add your handling code here:
+        selectTipe=true;
+        tipe="Campuran";
+    }//GEN-LAST:event_jRadioButton3ActionPerformed
+
+    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
+        // TODO add your handling code here:
+        selectHarga = true;
+        hargaMaximal=499999;
+        hargaMinimal=0;
+    }//GEN-LAST:event_jRadioButton4ActionPerformed
+
+    private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
+        // TODO add your handling code here:
+        selectHarga = true;
+        hargaMaximal=749999;
+        hargaMinimal=500000;
+    }//GEN-LAST:event_jRadioButton5ActionPerformed
+
+    private void jRadioButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton7ActionPerformed
+        // TODO add your handling code here:
+        selectHarga = true;
+        hargaMaximal=14999999;
+        hargaMinimal=1000000;
+    }//GEN-LAST:event_jRadioButton7ActionPerformed
+
+    private void jRadioButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton8ActionPerformed
+        // TODO add your handling code here:
+        selectHarga = true;
+        hargaMaximal=999999999;
+        hargaMinimal=1500000;
+    }//GEN-LAST:event_jRadioButton8ActionPerformed
+
+    private void jRadioButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton21ActionPerformed
+        // TODO add your handling code here:
+        selectKecamatan = true;
+        kecamatan = "Dayeuhkolot";
+    }//GEN-LAST:event_jRadioButton21ActionPerformed
+
+    private void jRadioButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton22ActionPerformed
+        // TODO add your handling code here:
+        selectKecamatan = true;
+        kecamatan = "Gedebage";
+    }//GEN-LAST:event_jRadioButton22ActionPerformed
+
+    private void jRadioButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton23ActionPerformed
+        // TODO add your handling code here:
+        selectKecamatan = true;
+        kecamatan = "Kiaracondong";
+    }//GEN-LAST:event_jRadioButton23ActionPerformed
+
+    private void jRadioButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton24ActionPerformed
+        // TODO add your handling code here:
+        selectKecamatan = true;
+        kecamatan = "Lengkong";
+    }//GEN-LAST:event_jRadioButton24ActionPerformed
+
+    private void jRadioButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton25ActionPerformed
+        // TODO add your handling code here:
+        selectKecamatan = true;
+        kecamatan = "Panyileukan";
+    }//GEN-LAST:event_jRadioButton25ActionPerformed
+
+    private void jRadioButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton26ActionPerformed
+        // TODO add your handling code here:
+        selectKecamatan = true;
+        kecamatan = "Parongpong";
+    }//GEN-LAST:event_jRadioButton26ActionPerformed
+
+    private void jRadioButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton27ActionPerformed
+        // TODO add your handling code here:
+        selectKecamatan = true;
+        kecamatan = "Regol";
+    }//GEN-LAST:event_jRadioButton27ActionPerformed
+
+    private void jRadioButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton28ActionPerformed
+        // TODO add your handling code here:
+        selectKecamatan = true;
+        kecamatan = "Sukajadi";
+    }//GEN-LAST:event_jRadioButton28ActionPerformed
+
+    private void jRadioButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton29ActionPerformed
+        // TODO add your handling code here:
+        selectKecamatan = true;
+        kecamatan = "Ujungberung";
+    }//GEN-LAST:event_jRadioButton29ActionPerformed
+
+    private void jRadioButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton9ActionPerformed
+        // TODO add your handling code here:
+        selectKecamatan = true;
+        kecamatan = "Andir";
+    }//GEN-LAST:event_jRadioButton9ActionPerformed
+
+    private void jRadioButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton10ActionPerformed
+        // TODO add your handling code here:
+        selectKecamatan = true;
+        kecamatan = "Antapani";
+    }//GEN-LAST:event_jRadioButton10ActionPerformed
+
+    private void jRadioButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton11ActionPerformed
+        // TODO add your handling code here:
+        selectKecamatan = true;
+        kecamatan = "Arcamanik";
+    }//GEN-LAST:event_jRadioButton11ActionPerformed
+
+    private void jRadioButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton12ActionPerformed
+        // TODO add your handling code here:
+        selectKecamatan = true;
+        kecamatan = "Bandung Kidul";
+    }//GEN-LAST:event_jRadioButton12ActionPerformed
+
+    private void jRadioButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton13ActionPerformed
+        // TODO add your handling code here:
+        selectKecamatan = true;
+        kecamatan = "Bandung Kulon";
+    }//GEN-LAST:event_jRadioButton13ActionPerformed
+
+    private void jRadioButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton14ActionPerformed
+        // TODO add your handling code here:
+        selectKecamatan = true;
+        kecamatan = "Batununggal";
+    }//GEN-LAST:event_jRadioButton14ActionPerformed
+
+    private void jRadioButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton15ActionPerformed
+        // TODO add your handling code here:
+        selectKecamatan = true;
+        kecamatan = "Buah Batu";
+    }//GEN-LAST:event_jRadioButton15ActionPerformed
+
+    private void jRadioButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton16ActionPerformed
+        // TODO add your handling code here:
+        selectKecamatan = true;
+        kecamatan = "Cibeunying Kaler";
+    }//GEN-LAST:event_jRadioButton16ActionPerformed
+
+    private void jRadioButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton17ActionPerformed
+        // TODO add your handling code here:
+        selectKecamatan = true;
+        kecamatan = "Cibeunying Kidul";
+    }//GEN-LAST:event_jRadioButton17ActionPerformed
+
+    private void jRadioButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton18ActionPerformed
+        // TODO add your handling code here:
+        selectKecamatan = true;
+        kecamatan = "Cibiru";
+    }//GEN-LAST:event_jRadioButton18ActionPerformed
+
+    private void jRadioButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton19ActionPerformed
+        // TODO add your handling code here:
+        selectKecamatan = true;
+        kecamatan = "Cimenyan";
+    }//GEN-LAST:event_jRadioButton19ActionPerformed
+
+    private void FilterButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FilterButtonMousePressed
+        // TODO add your handling code here:
+        filter2Obj fil2 = new filter2Obj;
+        filter3Obj fil3 = new filter3Obj;
+        List<ObjXcle> hasil = new ArrayList<>();
+        
+        if (selectKecamatan && selectHarga){
+            hasil = fil2.filterHargKec(hargaMaximal, hargaMinimal, kecamatan);
+        }else if (selectKecamatan && selectTipe){
+            hasil = fil2.filterKecTipe(tipe, kecamatan);
+        }else if (selectHarga && selectTipe){
+            hasil = fil2.filterHargTipe(hargaMaximal,hargaMinimal,tipe);
+        }else if (selectHarga && selectTipe && selectHarga){
+            hasil = fil3.filter3Object(hargaMaximal, hargaMinimal, kecamatan, tipe);
+        }
+    }//GEN-LAST:event_FilterButtonMousePressed
 
     //@author Imanda_Syahrul_Ramadhan
     
@@ -440,19 +1178,22 @@ public class Dashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BG;
+    private javax.swing.JPanel FilterButton;
+    private javax.swing.JPanel KecamatanPanel;
     private javax.swing.JLabel Loggin1;
     private javax.swing.JLabel Logout;
     private javax.swing.JLabel Logout1;
     private javax.swing.JPanel PanelBookmark;
     private javax.swing.JPanel PanelFilter;
-    private javax.swing.JPanel PanelLogout1;
+    private javax.swing.JPanel PanelLogout;
     private javax.swing.JPanel PanelSetting;
     private javax.swing.JPanel PanelStatistic;
+    private javax.swing.JPanel RangeHargaPanel;
+    private javax.swing.JPanel TipeKost;
     private javax.swing.JLabel about;
     private javax.swing.JLabel about1;
     private javax.swing.JPanel basedOn;
     private javax.swing.JPanel basedOn1;
-    private javax.swing.JPanel basedOn3;
     private javax.swing.JLabel iconAbout;
     private javax.swing.JLabel iconAbout1;
     private javax.swing.JLabel iconLabel1;
@@ -460,15 +1201,49 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel iconLogout1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel9;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton10;
+    private javax.swing.JRadioButton jRadioButton11;
+    private javax.swing.JRadioButton jRadioButton12;
+    private javax.swing.JRadioButton jRadioButton13;
+    private javax.swing.JRadioButton jRadioButton14;
+    private javax.swing.JRadioButton jRadioButton15;
+    private javax.swing.JRadioButton jRadioButton16;
+    private javax.swing.JRadioButton jRadioButton17;
+    private javax.swing.JRadioButton jRadioButton18;
+    private javax.swing.JRadioButton jRadioButton19;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton20;
+    private javax.swing.JRadioButton jRadioButton21;
+    private javax.swing.JRadioButton jRadioButton22;
+    private javax.swing.JRadioButton jRadioButton23;
+    private javax.swing.JRadioButton jRadioButton24;
+    private javax.swing.JRadioButton jRadioButton25;
+    private javax.swing.JRadioButton jRadioButton26;
+    private javax.swing.JRadioButton jRadioButton27;
+    private javax.swing.JRadioButton jRadioButton28;
+    private javax.swing.JRadioButton jRadioButton29;
+    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton jRadioButton5;
+    private javax.swing.JRadioButton jRadioButton6;
+    private javax.swing.JRadioButton jRadioButton7;
+    private javax.swing.JRadioButton jRadioButton8;
+    private javax.swing.JRadioButton jRadioButton9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JLabel judulApp;
     private javax.swing.JPanel sidePanel;
     // End of variables declaration//GEN-END:variables
