@@ -1,12 +1,12 @@
 package AppPackage2;
 
-
 import Barchart.*;
 import ObjectStatistik.ObjectXcle;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -30,12 +30,12 @@ import org.jfree.data.general.DefaultPieDataset;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Salman Al Hafizh
  */
 public class BarChart extends javax.swing.JFrame {
+
     /**
      * Creates new form BarChart
      */
@@ -52,158 +52,118 @@ public class BarChart extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = createBarChartPanel1();
-        jPanel2 = createBarChartPanel2();
-        jPanel4 = createPieChartPanel1();
-        jPanel5 = createPieChartPanel2();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(153, 255, 255));
-        jPanel1.setLayout(new java.awt.BorderLayout());
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel1.setText("Hai Aji");
+        jLabel1.setPreferredSize(new java.awt.Dimension(300, 14));
 
-        jPanel2.setBackground(new java.awt.Color(153, 255, 255));
-        jPanel2.setLayout(new java.awt.BorderLayout());
-
-        jPanel4.setBackground(new java.awt.Color(153, 255, 255));
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 248, Short.MAX_VALUE)
-        );
-
-        jPanel5.setBackground(new java.awt.Color(153, 255, 255));
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 240, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE))
-                .addContainerGap())
+            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(123, Short.MAX_VALUE)
+                .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 182, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(95, 95, 95))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(layout.createSequentialGroup()
+                .add(49, 49, 49)
+                .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 72, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(179, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
-     public static int countKecamatanstatic (String kec) {
-      FileInputStream xcleFile = new FileInputStream(new File("src\\Object\\data_terbaru.xlsx"));
-      String kecamatan;
-      
-      XSSFWorkbook workbook = new XSSFWorkbook(xcleFile);
-      XSSFSheet spreadsheet = workbook.getSheetAt(0); //Read sheet pertama
-      Iterator < Row >  rowIterator = spreadsheet.iterator();
-      rowIterator.next();
-      
-      while (rowIterator.hasNext()){
-          Row currentRow = rowIterator.next();
-          
-          Cell kecam = currentRow.getCell(17);
-          
-          kecamatan=kecam.getStringCellValue();
-          if (str){
-               jumlah +=1;
-          }
-      }
-        
-      return jumlah;
-}
+
+    public static int countKecamatanstatic(String kec) throws FileNotFoundException, IOException {
+        FileInputStream xcleFile = new FileInputStream(new File("src\\Object\\data_terbaru.xlsx"));
+        String kecamatan;
+
+        XSSFWorkbook workbook = new XSSFWorkbook(xcleFile);
+        XSSFSheet spreadsheet = workbook.getSheetAt(0); //Read sheet pertama
+        Iterator< Row> rowIterator = spreadsheet.iterator();
+        rowIterator.next();
+
+        while (rowIterator.hasNext()) {
+            Row currentRow = rowIterator.next();
+
+            Cell kecam = currentRow.getCell(17);
+
+            kecamatan = kecam.getStringCellValue();
+            if (str) {
+                jumlah += 1;
+            }
+        }
+
+        return jumlah;
+    }
 
     // Bar Chart
-    public static JPanel createBarChartPanel1(){
+    public static JPanel createBarChartPanel1() {
         DefaultCategoryDataset barDataset = new DefaultCategoryDataset();
         List<data> daftar = new ArrayList<>();
-        
+        String[] kecamatan = {"Andir", "Antapani", "Arcamanik", "Bandung Kidul", "BandungKulon", "Bandung Wetan", "Batununggal",
+            "Buah Batu", "Cibeunying Kaler", "Cibeunying Kidul"};
+        int[] jumlah = {10, 47, 4, 7, 1, 62, 6, 35, 3, 6};
+
         for (int i = 0; i < 10; i++) {
             data e = new data();
-            e.setInfo(10);
-            e.setTitle("eee" + i);
+            e.setInfo(jumlah[i]);
+            e.setTitle(kecamatan[i]);
             daftar.add(i, e);
         }
-        
+
         for (int i = 0; i < daftar.size(); i++) {
             barDataset.setValue(daftar.get(i).getInfo(), "", daftar.get(i).getTitle());
         }
-        
+
         JFreeChart chart = ChartFactory.createBarChart3D("Kost Berdasarkan Kecamatan", "Kecamatan", "Jumlah", barDataset, PlotOrientation.VERTICAL, true, true, false);
-        
+
         return new ChartPanel(chart);
     }
-    
-    public static JPanel createBarChartPanel2(){
+
+    public static JPanel createBarChartPanel2() {
         DefaultCategoryDataset barDataset = new DefaultCategoryDataset();
         List<data> daftar = new ArrayList<>();
-        
+
         for (int i = 0; i < 10; i++) {
             data e = new data();
             e.setInfo(10);
             e.setTitle("eee" + i);
             daftar.add(i, e);
         }
-        
+
         for (int i = 0; i < daftar.size(); i++) {
             barDataset.setValue(daftar.get(i).getInfo(), "", daftar.get(i).getTitle());
         }
-        
+
         JFreeChart chart = ChartFactory.createBarChart3D("Kost Berdasarkan Kecamatan", "Kecamatan", "Jumlah", barDataset, PlotOrientation.VERTICAL, true, true, false);
-        
+
         return new ChartPanel(chart);
     }
-    
-    public static JPanel createBarChartPanel3(){
+
+    public static JPanel createBarChartPanel3() {
         DefaultCategoryDataset barDataset = new DefaultCategoryDataset();
         List<data> daftar = new ArrayList<>();
-        
+
         for (int i = 0; i < 10; i++) {
             data e = new data();
             e.setInfo(10);
             e.setTitle("eee" + i);
             daftar.add(i, e);
         }
-        
+
         for (int i = 0; i < daftar.size(); i++) {
             barDataset.setValue(daftar.get(i).getInfo(), "", daftar.get(i).getTitle());
         }
-        
+
         JFreeChart chart = ChartFactory.createBarChart3D("Kost Berdasarkan Kecamatan", "Kecamatan", "Jumlah", barDataset, PlotOrientation.VERTICAL, true, true, false);
-        
+
         return new ChartPanel(chart);
     }
 
@@ -234,7 +194,7 @@ public class BarChart extends javax.swing.JFrame {
 
         return new ChartPanel(chart);
     }
-    
+
     public static JPanel createPieChartPanel2() {
         DefaultPieDataset pieDataset = new DefaultPieDataset();
         List<data> daftar = new ArrayList<>();
@@ -259,39 +219,41 @@ public class BarChart extends javax.swing.JFrame {
             }
             daftar.add(i, e);
         }
-        for (int i = 0; i< daftar.size (); i++) {
-            pieDataset.setValue(daftar.get(i).getTitle(), daftar.get(i).getInfo());
-        }
-        JFreeChart chart = ChartFactory.createPieChart3D("Kost Berdasarkan Range Harga", pieDataset, true, true, true);
-
-        return new ChartPanel(chart);
-    }
     
+
+    for (int i = 0; i< daftar.size (); i++) {
+            pieDataset.setValue(daftar.get(i).getTitle(), daftar.get(i).getInfo());
+    }
+    JFreeChart chart = ChartFactory.createPieChart3D("Kost Berdasarkan Range Harga", pieDataset, true, true, true);
+
+    return new ChartPanel(chart);
+}
+
     static List<ObjectXcle> bacaData = new ArrayList<>();
     
-//    public List<ObjectXcle> ReadExcel(int no_sheet) throws IOException {
-//        FileInputStream xcleFile = new FileInputStream(new File("src\\Object\\Data.xlsx"));
-//
-//        XSSFWorkbook workbook = new XSSFWorkbook(xcleFile);
-//        XSSFSheet spreadsheet = workbook.getSheetAt(no_sheet); //Read sheet pertama
-//        Iterator < Row >  rowIterator = spreadsheet.iterator();
-//        rowIterator.next();
-//
-//        while (rowIterator.hasNext()){
-//            Row currentRow = rowIterator.next();
-//
-//            Cell id = currentRow.getCell(0);
-//            Cell jumlah = currentRow.getCell(1);
-//
-//            ObjectXcle str = new ObjectXcle();
-//            str.setJumlah((int)jumlah.getNumericCellValue());
-//            str.setId(id.getStringCellValue());
-//
-//            bacaData.add(str);
-//        }
-//
-//          return bacaData;
-//    }
+    public List<ObjectXcle> ReadExcel(int no_sheet) throws IOException {
+        FileInputStream xcleFile = new FileInputStream(new File("src\\Object\\Data.xlsx"));
+
+        XSSFWorkbook workbook = new XSSFWorkbook(xcleFile);
+        XSSFSheet spreadsheet = workbook.getSheetAt(no_sheet); //Read sheet pertama
+        Iterator < Row >  rowIterator = spreadsheet.iterator();
+        rowIterator.next();
+
+        while (rowIterator.hasNext()){
+            Row currentRow = rowIterator.next();
+
+            Cell id = currentRow.getCell(0);
+            Cell jumlah = currentRow.getCell(1);
+
+            ObjectXcle str = new ObjectXcle();
+            str.setJumlah((int)jumlah.getNumericCellValue());
+            str.setId(id.getStringCellValue());
+
+            bacaData.add(str);
+        }
+
+          return bacaData;
+    }
     
         /**
      * @param args the command line arguments
@@ -307,16 +269,52 @@ public class BarChart extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                }
+                
+
+
+
+
+
+}
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BarChart.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BarChart.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BarChart.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BarChart.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BarChart.class
+
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        
+
+
+
+
+
+} catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(BarChart.class
+
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        
+
+
+
+
+
+} catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(BarChart.class
+
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        
+
+
+
+
+
+} catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(BarChart.class
+
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -332,9 +330,6 @@ public class BarChart extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
-}
+
