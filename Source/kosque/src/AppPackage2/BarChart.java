@@ -53,7 +53,6 @@ public class BarChart extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = createBarChartPanel1();
-        jPanel2 = createBarChartPanel2();
         jPanel4 = createPieChartPanel1();
         jPanel5 = createPieChartPanel2();
 
@@ -61,9 +60,6 @@ public class BarChart extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(153, 255, 255));
         jPanel1.setLayout(new java.awt.BorderLayout());
-
-        jPanel2.setBackground(new java.awt.Color(153, 255, 255));
-        jPanel2.setLayout(new java.awt.BorderLayout());
 
         jPanel4.setBackground(new java.awt.Color(153, 255, 255));
 
@@ -98,22 +94,21 @@ public class BarChart extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -123,47 +118,50 @@ public class BarChart extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
-     public static int countKecamatanstatic (String kec) {
-      FileInputStream xcleFile = new FileInputStream(new File("src\\Object\\data_terbaru.xlsx"));
-      String kecamatan;
-      
-      XSSFWorkbook workbook = new XSSFWorkbook(xcleFile);
-      XSSFSheet spreadsheet = workbook.getSheetAt(0); //Read sheet pertama
-      Iterator < Row >  rowIterator = spreadsheet.iterator();
-      rowIterator.next();
-      
-      while (rowIterator.hasNext()){
-          Row currentRow = rowIterator.next();
-          
-          Cell kecam = currentRow.getCell(17);
-          
-          kecamatan=kecam.getStringCellValue();
-          if (str){
-               jumlah +=1;
-          }
-      }
-        
-      return jumlah;
-}
+//     public static int countKecamatanstatic (String kec) {
+//      FileInputStream xcleFile = new FileInputStream(new File("src\\Object\\data_terbaru.xlsx"));
+//      String kecamatan;
+//      
+//      XSSFWorkbook workbook = new XSSFWorkbook(xcleFile);
+//      XSSFSheet spreadsheet = workbook.getSheetAt(0); //Read sheet pertama
+//      Iterator < Row >  rowIterator = spreadsheet.iterator();
+//      rowIterator.next();
+//      
+//      while (rowIterator.hasNext()){
+//          Row currentRow = rowIterator.next();
+//          
+//          Cell kecam = currentRow.getCell(17);
+//          
+//          kecamatan=kecam.getStringCellValue();
+//          if (str){
+//               jumlah +=1;
+//          }
+//      }
+//        
+//      return jumlah;
+//    }
 
     // Bar Chart
-    public static JPanel createBarChartPanel1(){
+    public static JPanel createBarChartPanel1() {
         DefaultCategoryDataset barDataset = new DefaultCategoryDataset();
         List<data> daftar = new ArrayList<>();
-        
+        String[] kecamatan = {"Andir", "Antapani", "Arcamanik", "Bandung Kidul", "BandungKulon", "Bandung Wetan", "Batununggal",
+            "Buah Batu", "Cibeunying Kaler", "Cibeunying Kidul"};
+        int[] jumlah = {10, 47, 4, 7, 1, 62, 6, 35, 3, 6};
+
         for (int i = 0; i < 10; i++) {
             data e = new data();
-            e.setInfo(10);
-            e.setTitle("eee" + i);
+            e.setInfo(jumlah[i]);
+            e.setTitle(kecamatan[i]);
             daftar.add(i, e);
         }
-        
+
         for (int i = 0; i < daftar.size(); i++) {
             barDataset.setValue(daftar.get(i).getInfo(), "", daftar.get(i).getTitle());
         }
-        
+
         JFreeChart chart = ChartFactory.createBarChart3D("Kost Berdasarkan Kecamatan", "Kecamatan", "Jumlah", barDataset, PlotOrientation.VERTICAL, true, true, false);
-        
+
         return new ChartPanel(chart);
     }
     
@@ -333,7 +331,6 @@ public class BarChart extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     // End of variables declaration//GEN-END:variables
