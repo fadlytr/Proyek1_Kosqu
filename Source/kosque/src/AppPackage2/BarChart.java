@@ -145,11 +145,14 @@ public class BarChart extends javax.swing.JFrame {
     public static JPanel createBarChartPanel1() {
         DefaultCategoryDataset barDataset = new DefaultCategoryDataset();
         List<data> daftar = new ArrayList<>();
-        String[] kecamatan = {"Andir", "Antapani", "Arcamanik", "Bandung Kidul", "BandungKulon", "Bandung Wetan", "Batununggal",
-            "Buah Batu", "Cibeunying Kaler", "Cibeunying Kidul"};
-        int[] jumlah = {10, 47, 4, 7, 1, 62, 6, 35, 3, 6};
+        String[] kecamatan={"Andir","Antapani","Arcamanik","Bandung Kidul","BandungKulon","Bandung Wetan","Batununggal",
+            "Buah Batu","Cibeunying Kaler","Cibeunying Kidul","Cibiru","Cimenyan","Coblong",
+            "Dayeuhkolot","Gedebage","Kiaracondong","Lengkong","Panyileukan","Parongpong","Regol","Sukajadi",
+            "Ujung Berung"};
+        
+        int[] jumlah = {10, 47, 4, 7, 1, 62, 6, 35, 3, 6, 1, 1, 39, 4, 9, 22, 14, 2, 2, 1, 1, 1};
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 22; i++) {
             data e = new data();
             e.setInfo(jumlah[i]);
             e.setTitle(kecamatan[i]);

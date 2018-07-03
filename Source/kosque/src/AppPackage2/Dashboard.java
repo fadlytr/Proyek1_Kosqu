@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package AppPackage;
+package AppPackage2;
 
 import AppPackage2.BarChart;
 import java.awt.Color;
@@ -1116,20 +1116,20 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButton19ActionPerformed
 
     private void FilterButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FilterButtonMousePressed
-        // TODO add your handling code here:
-        filter2Obj fil2 = new filter2Obj;
-        filter3Obj fil3 = new filter3Obj;
-        List<ObjXcle> hasil = new ArrayList<>();
-        
-        if (selectKecamatan && selectHarga){
-            hasil = fil2.filterHargKec(hargaMaximal, hargaMinimal, kecamatan);
-        }else if (selectKecamatan && selectTipe){
-            hasil = fil2.filterKecTipe(tipe, kecamatan);
-        }else if (selectHarga && selectTipe){
-            hasil = fil2.filterHargTipe(hargaMaximal,hargaMinimal,tipe);
-        }else if (selectHarga && selectTipe && selectHarga){
-            hasil = fil3.filter3Object(hargaMaximal, hargaMinimal, kecamatan, tipe);
-        }
+//        // TODO add your handling code here:
+//        filter2Obj fil2 = new filter2Obj;
+//        filter3Obj fil3 = new filter3Obj;
+//        List<ObjXcle> hasil = new ArrayList<>();
+//        
+//        if (selectKecamatan && selectHarga){
+//            hasil = fil2.filterHargKec(hargaMaximal, hargaMinimal, kecamatan);
+//        }else if (selectKecamatan && selectTipe){
+//            hasil = fil2.filterKecTipe(tipe, kecamatan);
+//        }else if (selectHarga && selectTipe){
+//            hasil = fil2.filterHargTipe(hargaMaximal,hargaMinimal,tipe);
+//        }else if (selectHarga && selectTipe && selectHarga){
+//            hasil = fil3.filter3Object(hargaMaximal, hargaMinimal, kecamatan, tipe);
+//        }
     }//GEN-LAST:event_FilterButtonMousePressed
 
     //@author Imanda_Syahrul_Ramadhan
