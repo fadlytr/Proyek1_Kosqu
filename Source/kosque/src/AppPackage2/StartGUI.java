@@ -362,6 +362,7 @@ public class StartGUI extends javax.swing.JFrame {
         resetColor(PanelSignIn);
         resetColor(PanelSignUP);
         resetColor(PanelStatistic);
+        new About().setVisible(true);
     }//GEN-LAST:event_PanelAboutMousePressed
 
     private void PanelSignInMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelSignInMousePressed
